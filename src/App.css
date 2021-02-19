@@ -1,17 +1,72 @@
+.main{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+}
 .container{
   display: flex;
   justify-content: center;
   align-items: center; 
   flex-direction: column;
+  margin-top: -290px;
 }
 #wineParty{
   max-width: 100%;
 }
-h3{
-  display: flex;
+#slogan{
+  font-weight: bold;
 }
-@media screen and (max-width: 768px) {
+
+#name{
+  font-size: 75px;
+  /* font-family: 'Dancing Script', cursive; */
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Sacramento', cursive;
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+  color: #9fbfff;
+  z-index: 1000;
+  padding: 0; margin: 0;
+  font-weight: bold;
+}
+/* Login Form */
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  /* justify-content: space-around; */
+  margin: 50px;
+  z-index: 1000;
+  /* justify-content:flex-end; */
+
+}
+@media screen and (max-width: 1300px) {
+  .container{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
   #wineParty{
     margin-right: 70px;
   }
+  #name{
+    font-size: 45px;
+  }
+  .main{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  #loginForm{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /* justify-content: space-around; */
+    margin: 50px;
+    /* justify-content:flex-end; */
+  
+  }
+ }
+ @media screen and (min-width: 768px) {
+
  }
