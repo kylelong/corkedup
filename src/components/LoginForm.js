@@ -20,7 +20,7 @@ export default function LoginForm() {
       <TextField id="outlined-basic" label="Password" variant="outlined" />
       <div class="buttons">
         <button class="button is-info is-light is-medium is-fullwidth">Login</button>
-        <a href="">Already have an account? Sign in.</a>
+        <a href="">Already have an account? Sign in</a>
       </div>
     </form>
   );
