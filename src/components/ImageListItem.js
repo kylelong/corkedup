@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 const ImageListItem = (props) => {
     return(
         <li className="imageListItem">
-            <img className="imageListItemImg" alt="img" src={props.img}/>
+            <img className="imageListItemImg" alt="img" src={props.img} height="55" width="55"/>
             <h3 className="imageListItemTitle">{props.title}</h3>
             <p className="imageListItemText">{props.text}</p>
         </li>

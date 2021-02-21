@@ -1,7 +1,8 @@
 import wineParty from './assets/wine_party.png';
-import money from './assets/money.png';
-import meal from './assets/meal.png';
+import dollar from './assets/dollar.png';
+import meal from './assets/diet.png';
 import calendar from './assets/calendar.png';
+
 import './App.css';
 import './components/LoginForm';
 import LoginForm from './components/LoginForm';
@@ -12,17 +13,17 @@ function App() {
     {
       title: "Events",
       img: calendar,
-      text:"Local and virtual events"
+      text:"Local and virtual events happening around the world so you are always in the loop."
     },
     {
       title: "Savings",
-      img: money,
-      text:"Flash wine sales"
+      img: dollar,
+      text:"Flash wine sales and giveaways that save you money."
     },
     {
       title: "Recipes",
       img: meal,
-      text:"Tailored wine pairings"
+      text:"Weekly tailored wine pairings to expand your palette."
     }
   ]
   return (
@@ -31,12 +32,9 @@ function App() {
             <h3 id="name">Corked Up</h3>
             <p id="slogan">Helping you have the best wine experience wherever you are.</p>
             <img id="wineParty" src={wineParty} alt="wine party image"/>
-          </div>
-
-          <div className="container2">
             <ImageList list={list} />
-            <LoginForm />
           </div>
+            <LoginForm />
     </div>
   );
 }

@@ -8,13 +8,19 @@
   justify-content: center;
   align-items: center; 
   flex-direction: column;
-  margin-top: -730px; /* -750px */
+  margin-top: -290px;
 }
 #wineParty{
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  bottom: 100px;
 }
 #slogan{
   font-weight: bold;
+  z-index: 1000;
 }
 
 #name{
@@ -37,20 +43,16 @@
   z-index: 1000;
 
 }
+/* Image List */
 #imageList{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: row;
   align-self: flex-end;
   align-content: flex-end;
-  margin: 50px;
+  /* margin: 50px; */
+  position: relative;
+  left: 60px;
   z-index: 1000;
-}
-.container2{
-  display: flex;
-  /* align-items: flex-end;
-  align-content: flex-end; */
-  flex-direction: column-reverse;
-
 }
 #imageListHeader{
   font-family: 'Sacramento', cursive;
@@ -58,26 +60,30 @@
   font-size: 50px;
   text-align: center;
 }
+.imageListItem{
+  padding-right: 60px;
+}
 #imageList{
   position: relative;
-  top: -100px;
- left: 70px;
+  bottom: 50px;
+ 
 }
 .imageListItemImg{
-  position: relative;
-  top: 60px;
-  right: 50px;
-}
-.imageListItem{
-  margin-top: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
 }
 .imageListItemTitle{
   color: #808080;
   font-size: 20px;
+  text-align: center;
 }
 .imageListItemText{
   font-size: 16px;
+  width: 200px;
+  text-align: center;
 }
+/* End Image List */
 
 @media screen and (max-width: 1300px) {
   .container{
@@ -88,6 +94,9 @@
   }
   #wineParty{
     margin-right: 70px;
+    position: relative;
+    bottom: 0px;
+
   }
   #name{
     font-size: 45px;
@@ -103,10 +112,13 @@
     align-self: center;
     margin: 50px;
   }
-  .container2{
-    display: flex;
-    align-self: center;
+  #imageList{
+    display: none;
   }
+  #slogan{
+    text-align: center;
+  }
+
  }
  @media screen and (min-width: 768px) {
 

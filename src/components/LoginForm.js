@@ -18,8 +18,8 @@ export default function LoginForm() {
     <form className={classes.root} noValidate autoComplete="off" id="loginForm">
       <TextField id="outlined-basic" label="Email" variant="outlined" />
       <TextField id="outlined-basic" label="Password" variant="outlined" />
-      <div class="buttons">
-        <button class="button is-info is-light is-medium is-fullwidth">Login</button>
+      <div className="buttons">
+        <button className="button is-info is-light is-medium is-fullwidth">Login</button>
         <a href="">Already have an account? Sign in</a>
       </div>
     </form>
