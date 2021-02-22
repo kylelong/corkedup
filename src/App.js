@@ -31,10 +31,10 @@ function App() {
           <div className="container">
             <h3 id="name">Corked Up</h3>
             <p id="slogan">Helping you have the best wine experience wherever you are.</p>
-            <img id="wineParty" src={wineParty} alt="wine party image"/>
+            <LoginForm />
             <ImageList list={list} />
           </div>
-            <LoginForm />
+            <img id="wineParty" src={wineParty}/>
     </div>
   );
 }

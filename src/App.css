@@ -1,28 +1,23 @@
+/* html, body {
+  height: 100%;
+  width: 100%;
+}
+html {
+  overflow: auto;
+} */
 .main{
   display: flex;
-  align-items: flex-end;
-  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 .container{
   display: flex;
   justify-content: center;
   align-items: center; 
   flex-direction: column;
-  margin-top: -290px;
+  /* margin-top: -290px; */
 }
-#wineParty{
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  bottom: 100px;
-}
-#slogan{
-  font-weight: bold;
-  z-index: 1000;
-}
-
 #name{
   font-size: 75px;
   /* font-family: 'Dancing Script', cursive; */
@@ -31,14 +26,33 @@
   /* font-family: "Helvetica Neue", Arial, sans-serif; */
   color: #9fbfff;
   z-index: 1000;
-  padding: 0; margin: 0;
+  padding: 0; 
+  margin: 0;
   font-weight: bold;
 }
+#slogan{
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+#wineParty{
+  height: auto;
+  max-width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end; 
+  position: relative;
+  top:13px;
+  right: 100px;
+}
+
+
 /* Login Form */
 #loginForm{
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
+  justify-content: flex-start;
+  align-items: flex-start; 
   margin: 50px;
   z-index: 1000;
 
@@ -47,12 +61,12 @@
 #imageList{
   display: flex;
   flex-direction: row;
-  align-self: flex-end;
-  align-content: flex-end;
-  /* margin: 50px; */
-  position: relative;
-  left: 60px;
+  justify-content: center;
+  align-items: center; 
+  padding-top: 100px;
   z-index: 1000;
+  position: relative;
+  left: 10px;
 }
 #imageListHeader{
   font-family: 'Sacramento', cursive;
@@ -93,9 +107,14 @@
     align-self: center;
   }
   #wineParty{
-    margin-right: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
     position: relative;
-    bottom: 0px;
+    left: 0;
 
   }
   #name{
@@ -117,6 +136,8 @@
   }
   #slogan{
     text-align: center;
+    position: relative;
+    max-width: 300px;
   }
 
  }
