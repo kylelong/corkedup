@@ -7,7 +7,7 @@ import Logo from './Logo';
 import LoginForm from './LoginForm';
 import ImageList from './ImageList';
 
-function Home() {
+function LandingPage() {
   let list = [
     {
       title: "Events",
@@ -38,4 +38,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default LandingPage;
