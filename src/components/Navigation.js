@@ -22,10 +22,11 @@ const Navigation = () => {
             <button className="button is-info is-light is-small" id="menuButton" onClick={clickedButton}>{buttonText}</button> 
             <Logo />
             <ul className="navbarMenu">
-                
+                <Link to="/account">
                 <li>
-                    Profile
+                   Account
                 </li>
+                </Link>
                 <Link to="/">
                 <li>
                     Logout
@@ -74,9 +75,9 @@ const Navigation = () => {
 
                             <br />
 
-                           <Link to="/profile">
+                           <Link to="/account">
                                 <li>
-                                    Profile
+                                    Account
                                 </li>
                             </Link>
 

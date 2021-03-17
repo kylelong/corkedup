@@ -7,6 +7,7 @@ import Payment from './components/Payment';
 import Events from './components/Events';
 import Savings from './components/Savings';
 import Recipes from './components/Recipes';
+import Account from './components/Account';
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
         <Route path="/events" component={Events} />
         <Route path="/savings" component={Savings} />
         <Route path="/recipes" component={Recipes} />
+        <Route path="/account" component={Account} />
       </Switch>
     </BrowserRouter>
   );
