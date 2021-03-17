@@ -20,6 +20,7 @@ a{
 #menuButton{
     position: absolute;
     left: 10px;
+    z-index: 1000;
 }
 .navbarMenu li:hover, .mobileMenu li:hover, .desktopMenu li:hover{
     cursor: pointer;
@@ -48,14 +49,22 @@ a{
       }
       .mobileMenu{
        position: absolute;
-       top: 20%;
+       top: 9%;
+       z-index: 1000;
+       width:100%;
+       background-color: white;
+       height: 100%;
+        -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
       }
       .mobileMenu li{
         font-size: 30px;
         cursor: pointer;
         font-family: sans-serif;
         color: #d3d3d3;
-        font-weight: 350;
+        font-weight: bold;
+        text-align: center;
     }
       
 }

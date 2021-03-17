@@ -13,6 +13,9 @@
   top: 160px;
   /* margin-top: -290px; */
 }
+#nameContainer{
+  z-index: 1000;
+}
 #name{
   font-size: 75px;
   /* font-family: 'Dancing Script', cursive; */
@@ -94,6 +97,16 @@
 }
 /* End Image List */
 
+/*  header for events, savings, recipes */
+.pageHeader{
+
+}
+@media screen and (max-width: 768px){
+  .pageImg{
+     width: 485px;
+    height: 307.85px; 
+  }
+}
 @media screen and (max-width: 1300px) {
   .container{
     margin: 0;

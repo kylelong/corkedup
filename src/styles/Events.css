@@ -1,0 +1,16 @@
+#party{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 30px;
+    width: 500px;
+}
+h3{
+    text-align: center;
+}
+@media screen and (max-width: 768px) {
+    #party{
+       padding-top: 35px;
+    }
+}
