@@ -1,5 +1,11 @@
 CC length info: https://stackoverflow.com/questions/72768/how-do-you-detect-credit-card-type-based-on-number#:~:text=Important%3A%20card%20numbers%20do%20vary,between%2012%20and%2019%20digits.
 https://passwordsgenerator.net/plus/
+Validation: Make sure user is logged in to access pages
+https://icons8.com/illustrations/illustration/clip-lets-party
+https://icons8.com/illustrations/illustration/flame-cook-is-making-soup
+https://icons8.com/illustrations/illustration/pablita-867
+
+
 kU3G4VpNFR
 re6kEwyxHV
 hjA8xRm6p7

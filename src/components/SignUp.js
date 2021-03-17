@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Logo from './Logo';
-import '../Signup.css';
+import '../styles/Signup.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Link } from "react-router-dom";

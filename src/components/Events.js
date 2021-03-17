@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Profile extends Component {
+class Events extends Component {
     render() {
         return (
             <div>
-                <p>Profile</p>
+                
             </div>
         );
     }
 }
 
-export default Profile;
+export default Events;

@@ -1,0 +1,73 @@
+.navContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.navbarMenu{
+  position:absolute;
+  top: 45px;
+  right: 100px;
+}
+a{
+    color: black;
+}
+.navbarMenu li{
+    display: inline;
+    font-size: 20px;
+    font-weight: 205;
+    margin-left: 20px;
+}
+#menuButton{
+    position: absolute;
+    left: 10px;
+}
+.navbarMenu li:hover, .mobileMenu li:hover, .desktopMenu li:hover{
+    cursor: pointer;
+    color: #9fbfff;
+    font-weight: bold;
+}
+.desktopMenu{
+ position: absolute;
+ top: 12%;
+ left: 50px;
+}
+.desktopMenu li{
+    font-size: 20px;
+    font-weight: 205;
+    padding-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+    .navContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; 
+    }
+    .navbarMenu, .desktopMenu{
+       display: none;
+      }
+      .mobileMenu{
+       position: absolute;
+       top: 20%;
+      }
+      .mobileMenu li{
+        font-size: 30px;
+        cursor: pointer;
+        font-family: sans-serif;
+        color: #d3d3d3;
+        font-weight: 350;
+    }
+      
+}
+@media screen and (max-width: 1300px){
+    .navbarMenu{
+        position:absolute;
+        top: 20px;
+        right: 100px;
+      }
+}
+@media screen and (min-width: 769px){
+    #menuButton, .mobileMenu{
+        display: none;
+    }
+}

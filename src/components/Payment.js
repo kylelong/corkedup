@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Logo from './Logo';
-import '../Payment.css';
+import '../styles/Payment.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Link } from "react-router-dom";
@@ -207,7 +207,7 @@ function Payment(props) {
                     }
                  
                  { ((accessCode.length > 0 && validCode(accessCode)) || validPayment() )  ?
-                            <Link to="/profile">
+                            <Link to="/home">
                                 <div className="buttons">
                                     <button className="button is-info is-light is-medium is-fullwidth" onClick={clickedButton}>Submit</button> 
                                 </div>
