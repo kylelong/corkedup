@@ -1,0 +1,21 @@
+.accountContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    font-size: 30px;
+    color: #d3d3d3;
+    font-weight: bold;
+}
+.accountContainer p{
+    font-size: 20px;
+}
+#cancel{
+    margin-top: 10px;
+}
+.error{
+    color: #808080;
+    width: 100%;
+}

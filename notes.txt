@@ -5,6 +5,9 @@ Validation: Make sure user is logged in to access pages
 https://icons8.com/illustrations/illustration/clip-lets-party
 https://icons8.com/illustrations/illustration/flame-cook-is-making-soup
 https://icons8.com/illustrations/illustration/pablita-867
+Send email notifications for deals.
+
+Menu (desktop & mobile) shows "home" via props on profile and no events, savings, recipes
 
 
 kU3G4VpNFR
