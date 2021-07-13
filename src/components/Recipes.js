@@ -1,13 +1,15 @@
 import React from 'react';
 import Navigation from './Navigation';
-import chef from '../assets/chef.png';
+import dinner from '../assets/dinner.png';
 import '../styles/Recipes.css';
 const Recipes = () => {
+    let header = "RECIPES"
     return (
         <div>
-                <Navigation />
-                <img id="chef" src={chef}  className="pageImg"/>
-                <h3 className="pageHeader">RECIPES</h3>
+                <Navigation header={header} />
+                <img id="chef" src={dinner}  className="pageImg"/>
+            
+
         </div>
     );
 };

@@ -7,9 +7,6 @@
     width: 480px;
     height: 350px;
 }
-.pageHeader{
-    text-align: center;
-}
 @media screen and (max-width: 768px){
     #chef{
         position: relative;

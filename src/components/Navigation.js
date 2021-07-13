@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import '../styles/Navigation.css';
 import { Link } from 'react-router-dom';
-const Navigation = () => {
+const Navigation = (props) => {
     //onclick menu shows
     /*
     Events
@@ -20,7 +20,7 @@ const Navigation = () => {
     return (
         <div className="navContainer">
             <button className="button is-info is-light is-small" id="menuButton" onClick={clickedButton}>{buttonText}</button> 
-            <Logo />
+            <Logo header={props.header} />
             <ul className="navbarMenu">
                 <Link to="/account">
                 <li>

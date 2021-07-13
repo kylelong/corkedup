@@ -3,6 +3,11 @@ import Navigation from './Navigation';
 import '../styles/Account.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -12,14 +17,19 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 const Account = () => {
-    //Cancel logic from database
+    //Cancel boolean logic from database
     //If no free trial, let them cancel free trial
     //Show X on cancel button
+    /**
+     * 
+     * If they cancelled and 7 days are not up: show x days until account deletion and add cc info
+     * 
+     */
     const classes = useStyles();
     const [email, setEmail] = useState("kylelong9506@gmail.com");
     const [joinDate, setJoinDate] = useState("3/21/2021");
     const [cancel, setCancel] = useState(false);
-    const [zipcode, setZipCode] = useState("28226")
+    const [zipcode, setZipCode] = useState("94109")
     const [errors, setErrors] = useState({zipcode: ""});
     const [zipCodeSave, setZipCodeSave] = useState(false);
     const [canceled, setCanceled] = useState(false);
@@ -94,7 +104,20 @@ const Account = () => {
                 }
 
                 {canceled &&
+                <div>
                      <span style={{color: "green"}}>Subscription successfully canceled.</span>
+                                {/* <FormControl component="fieldset">
+                                    <FormLabel component="legend">Reason for leaving...</FormLabel>
+                                    <RadioGroup aria-label="gender" name="gender1">
+                                        <FormControlLabel value="value" control={<Radio />} label="Not enough value" />
+                                        <FormControlLabel value="expensive" control={<Radio />} label="Too expensive" />
+                                        <FormControlLabel value="worth" control={<Radio />} label="Price is not worth it" />
+                                        <FormControlLabel value="other" control={<Radio />} label="Other" />
+
+                                    </RadioGroup>
+                                </FormControl> */}
+                     </div>
+                     
                 }
                 {(cancel && !canceled) && 
                         <div className="accountContainer"> 

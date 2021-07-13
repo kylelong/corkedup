@@ -4,11 +4,11 @@ import party from '../assets/birthday.png';
 import '../styles/Events.css';
 class Events extends Component {
     render() {
+        let header = "EVENTS";
         return (
             <div>
-                <Navigation />
+                <Navigation header={header} />
                 <img id="party" src={party}  className="pageImg"/>
-                <h3 className="pageHeader">EVENTS </h3>
             </div>
         );
     }

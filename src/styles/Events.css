@@ -6,9 +6,6 @@
     bottom: 30px;
     width: 500px;
 }
-.pageHeader{
-    text-align: center;
-}
 @media screen and (max-width: 768px) {
     #party{
        padding-top: 35px;

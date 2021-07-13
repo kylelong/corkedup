@@ -177,7 +177,7 @@ function Payment(props) {
             <div className="container2">
                 <Logo />
                 <h3 id="instruction"><b>Almost there! Enter your payment information to start enjoying Corked Up. Enjoy your 14 day trial now!</b></h3>
-                <p id="cost">After your 14 day trial, Corked Up is $5 per month.</p>
+                <p id="cost">After your 14 day trial, Corked Up is $10 per month.</p>
                 <form className={classes.root} noValidate autoComplete="off" id="signupForm">
                      <TextField id="outlined-basic" label="Access Code" variant="outlined" name="accessCode" onChange={onChange} />
                      { (errors.accessCode.length > 0) &&
@@ -191,7 +191,7 @@ function Payment(props) {
                        <p className="error">{errors.fullName}</p>
                     }
 
-                    <TextField id="outlined-basic" label="Card Number" variant="outlined" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" value={cardNumber} inputProps={{ maxLength:19 }} onChange={onChange} />
+                    <TextField id="outlined-basic" label="Card Number" variant="outlined" name="cardNumber" placeholder="#### #### #### ####" value={cardNumber} inputProps={{ maxLength:19 }} onChange={onChange} />
                     { (errors.cardNumber.length > 0) &&
                        <p className="error">{errors.cardNumber}</p>
                     }
