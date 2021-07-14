@@ -31,7 +31,7 @@ function LandingPage() {
             <Logo />
             <p id="slogan">Helping you have the best wine experience wherever you are.</p>
             <LoginForm />
-            <ImageList list={list} />
+            {/* <ImageList list={list} /> */}
           </div>
             <img id="wineParty" src={wineParty}/>
     </div>
