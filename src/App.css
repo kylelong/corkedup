@@ -1,19 +1,30 @@
 .main{
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-}
-.container{
-  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center; 
   flex-direction: column;
-  position: relative;
-  top: 160px;
-  /* margin-top: -290px; */
 }
 
+/* Home navbar menu */
+.homeNavbarMenu{
+  position:absolute;
+  top: 45px;
+  left: 100px;
+  z-index: 1000;
+}
+.homeNavbarMenu li{
+  display: inline;
+  font-size: 20px;
+  font-weight: 205;
+  margin-left: 20px;
+}
+.homeNavbarMenu li:hover, .mobileMenu li:hover, .desktopMenu li:hover{
+  cursor: pointer;
+  color: #9fbfff;
+  font-weight: bold;
+
+}
+/* Corked up in Logo.js */
 #name{
   font-size: 75px;
   /* font-family: 'Dancing Script', cursive; */
@@ -30,74 +41,11 @@
   display: flex; 
   flex-direction: row;
 }
-#slogan{
-  font-weight: bold;
-  z-index: 1000;
-  text-align: center;
-}
-#wineParty{
-  height: auto;
-  max-width: 100%;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end; 
-  position: relative;
-  top:13px;
-  right: 100px;
-  background: transparent;
-}
 
 
-/* Login Form */
-#loginForm, #signupForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; 
-  margin: 50px;
-  z-index: 1000;
 
-}
-/* Image List */
-#imageList{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; 
-  padding-top: 100px;
-  z-index: 1000;
-  position: relative;
-  left: 10px;
-}
-#imageListHeader{
-  font-family: 'Sacramento', cursive;
-  font-weight: bold;
-  font-size: 50px;
-  text-align: center;
-}
-.imageListItem{
-  padding-right: 60px;
-}
-#imageList{
-  position: relative;
-  bottom: 50px;
-}
-.imageListItemImg{
-  display: block;
-  margin-left: auto;
-  margin-right: auto 
-}
-.imageListItemTitle{
-  color: #808080;
-  font-size: 20px;
-  text-align: center;
-}
-.imageListItemText{
-  font-size: 16px;
-  width: 200px;
-  text-align: center;
-}
-/* End Image List */
+
+
 
 /*  header for events, savings, recipes */
 .pageHeader{
@@ -109,57 +57,14 @@
     height: 307.85px; 
   }
 }
-@media screen and (max-width: 1300px) {
-  .container{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    position: relative;
-    top: 0;
-  }
-  #wineParty{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    position: relative;
-    left: 0;
-    top:-70px;
 
-  }
+@media screen and (max-width: 1300px) {
+
   #name{
     font-size: 45px;
-  }
-  .main{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-  }
-  #loginForm{
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    margin: 50px;
-  }
-  #imageList{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-  }
-  .imageListItem{
-    padding-bottom: 10px;
-  }
-  #slogan{
-    text-align: center;
-    position: relative;
-    max-width: 300px;
-  }
-
  }
+
+}
  @media screen and (min-width: 768px) {
 
  }

@@ -1,0 +1,114 @@
+.pricingContainer{
+    display: flex;
+    flex-direction: row;
+}
+.pricing {
+    color: #9fbfff;
+    font-size: 75px;
+    font-family: 'Sacramento', cursive;
+    z-index: 1000;
+    padding-top: 35px; 
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+#pricing {
+    width: 100vw;
+    margin-top:unset;
+    background-color: #ffffff;
+    min-height: 450px;
+    color: #9fbfff;
+}
+
+.pricingSlogan{
+    color: #E86166;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 50px;
+    width: 450px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+    }
+
+.pricingBox{
+    box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 5.5px 10px rgba(0, 0, 0, 0.06),
+    0 15.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+  
+    min-height: 650px;
+    width: 400px;
+    margin: 50px auto;
+    background: #9fbfff;
+    border-radius: 10px;
+  }
+  #wineImg{
+    display:block;
+    margin:auto;
+    position: absolute;
+    top: 100px;
+    left: 33%;
+    transform: skewY(11deg);
+    
+  }
+  #skewBox{
+    transform: skewY(-11deg);
+    background-color: white;
+    width: 400px;
+    height: 300px;
+  }
+
+  #pricingCost{
+    color:gold;
+    margin-top: 10px;
+    font-size: 75px;
+    font-family: 'Sacramento', cursive;
+    font-weight: bold;
+    text-align: center;
+  }
+  #priceMonth{
+      color: white;
+      font-size: 30px;
+  }
+  .pricingText{
+      color: white;
+      text-align: center;
+      width: 250px;
+      margin-left: 80px;
+  }
+
+  #pricingList {
+      color: white;
+      text-align: center;
+  }
+  #pricingList li {
+    list-style-image: url("../assets/check.svg");
+    color: white;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 100px;
+
+  }
+
+
+  #pricingImage, #questionImage {
+    height: 300px;
+    width: 300px;
+  }
+  #pricingImage {
+    float: left;
+    margin-left: 100px;
+  }
+  @media screen and (max-width: 768px){
+    .pricingContainer{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+  }
+
+

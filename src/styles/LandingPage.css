@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    position: relative;
+    top: 110px;
+    /* margin-top: -290px; */
+  }
+  #slogan{
+    font-weight: bold;
+    z-index: 1000;
+    text-align: center;
+  }
+  /* Login Form */
+#loginForm, #signupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    margin: 50px;
+    z-index: 1000;
+  
+  }
+  #wineParty{
+    height: auto;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end; 
+    position: relative;
+    top:13px;
+    left: 100px;
+    background: transparent;
+  }
+
+  /* Image List */
+#imageList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    padding-top: 100px;
+    z-index: 1000;
+    position: relative;
+    left: 10px;
+  }
+  #imageListHeader{
+    font-family: 'Sacramento', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+  }
+  .imageListItem{
+    padding-right: 60px;
+  }
+  #imageList{
+    position: relative;
+    bottom: 50px;
+  }
+  .imageListItemImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+  .imageListItemTitle{
+    color: #808080;
+    font-size: 20px;
+    text-align: center;
+  }
+  .imageListItemText{
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+  }
+  /* End Image List */
+
+  /* Pricing */
+  
+  .row1{
+    display: flex;
+    flex-direction: row;
+  
+  }
+  #features, #faq {
+    padding-top: 35px;
+    width: 100vw;
+    margin-top: 100px;
+    background-color: #9fbfff;
+    min-height: 475px;
+    color: #ffffff;
+  }
+
+  #questionImage {
+    float: right;
+    margin-right: 100px;
+  }
+  .sectionHeader, .faq{
+    color: white;
+    font-size: 75px;
+    font-family: 'Sacramento', cursive;
+    z-index: 1000;
+    padding: 0; 
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+
+/* Responsive design */
+@media screen and (max-width: 1300px) {
+    .container, .row1{
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      position: relative;
+      top: 0;
+    }
+    #wineParty{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      position: relative;
+      left: 0;
+      top:-70px;
+  
+    }
+    .main{
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+    #loginForm{
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      margin: 50px;
+    }
+    #imageList{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+    }
+    .imageListItem{
+      padding-bottom: 10px;
+    }
+    #slogan{
+      text-align: center;
+      position: relative;
+      max-width: 300px;
+    }
+  
+   }

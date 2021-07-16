@@ -60,3 +60,80 @@ kn6BPEmxCr
 vN5p9mG3q7
 GfktK8uqC7
 M6T8XJ5hsu
+
+#5A38FD
+
+<svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="
+                M 0, 3
+                C 0, 0.78 0.78, 0 3, 0
+                S 6, 0.78 6, 3
+                    5.22, 6 3, 6
+                    0, 5.22 0, 3
+            " fill="#9fbfff" transform="rotate(
+                -34,
+                100,
+                100
+            ) translate(
+                97
+                97
+            )"></path></svg>
+
+            <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="
+                M 0, 15
+                C 0, 15 15, 0 15, 0
+                S 30, 15 30, 15
+                    15, 30 15, 30
+                    0, 15 0, 15
+            " fill="#9fbfff" transform="rotate(
+                -11,
+                100,
+                100
+            ) translate(
+                85
+                85
+            )"></path></svg>
+
+            <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="
+                M 0, 10
+                C 0, 0.7999999999999996 0.7999999999999996, 0 10, 0
+                S 20, 0.7999999999999996 20, 10
+                    19.2, 20 10, 20
+                    0, 19.2 0, 10
+            " fill="#9fbfff" transform="rotate(
+                31,
+                100,
+                100
+            ) translate(
+                90
+                90
+            )"></path></svg>
+
+            <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="
+                M 0, 7
+                C 0, 0.48999999999999966 0.48999999999999966, 0 7, 0
+                S 14, 0.48999999999999966 14, 7
+                    13.51, 14 7, 14
+                    0, 13.51 0, 7
+            " fill="#5A38FD" transform="rotate(
+                -24,
+                100,
+                100
+            ) translate(
+                93
+                93
+            )"></path></svg>
+
+            <svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="
+                M 0, 7
+                C 0, 6.72 6.72, 0 7, 0
+                S 14, 6.72 14, 7
+                    7.28, 14 7, 14
+                    0, 7.28 0, 7
+            " fill="#5A38FD" transform="rotate(
+                -40,
+                100,
+                100
+            ) translate(
+                93
+                93
+            )"></path></svg>

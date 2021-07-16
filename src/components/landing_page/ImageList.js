@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ImageListItem from './ImageListItem';
 const ImageList = props => {
     return (
-        <div>
+        <div className="featuresList">
             {/* <h3 id="imageListHeader">Sip Away</h3> */}
             <ul id="imageList">
                 {props.list.map((item, index) => (
