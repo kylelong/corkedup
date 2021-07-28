@@ -1,4 +1,10 @@
  #questionImage {
     height: 300px;
     width: 300px;
+    float: right;
+  }
+  @media screen and (max-width: 1300px) {
+    #questionImage {
+      display: none;
+    }
   }

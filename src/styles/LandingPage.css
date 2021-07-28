@@ -94,10 +94,6 @@
     color: #ffffff;
   }
 
-  #questionImage {
-    float: right;
-    margin-right: 100px;
-  }
   .sectionHeader, .faq{
     color: white;
     font-size: 75px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import questions from '../../assets/questions.png'
+import '../../styles/Questions.css';
 const Questions = () => {
     return (
         <div id="faq">

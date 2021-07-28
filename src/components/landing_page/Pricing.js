@@ -20,9 +20,11 @@ const Pricing = () => {
                         $9.<sup>99</sup>
                          <span id="priceMonth">/ month</span>
                     </p>
-                    <p class="pricingText">Improve your wine experience for just 33 cents a day. </p>
+                    <p class="pricingText">Improve your wine experience</p>
+                    <p class="pricingText">$0.33 A DAY</p>
+
                     <ul id="pricingList">
-                        <li>Save time</li>
+                        <li>Access to all features</li>
                         <li>Save time</li>
                         <li>Save time</li>
                     </ul>
