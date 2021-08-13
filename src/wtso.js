@@ -1,5 +1,7 @@
 var Twit = require('twit')
 var fs = require('fs');
+const axios = require('axios')
+const cheerio = require('cheerio');
 const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler')
 
 var T = new Twit({
@@ -9,6 +11,29 @@ var T = new Twit({
     access_token_secret:  'qNzU7Z9BPPo5rNe6W3mzvVWrmx1voiPvHeNEKd5hl4H9D'
   })
 const scheduler = new ToadScheduler();
+
+const getRating = (text) => {
+    let ratingRegex = /\d{2,3} (rating)/;
+    let index = 0;
+    let rating = "";
+    if(ratingRegex.test(text)){
+        index = text.search(ratingRegex);
+        rating = text.substring(index, index + 2);
+    }
+    return rating;
+}
+
+const getDiscount = (text) => {
+    let discountRegex = /\d{2,3}(% off)!/;
+    let index = 0;
+    let discount = "";
+    if(discountRegex.test(text)){
+        index = text.search(discountRegex);
+        discount = text.substring(index, index + 8);
+    }
+    return discount;
+}
+
 const task = new Task('wtso scraper', () => { 
     var options = { screen_name: 'wtso',
                 count: 5 };
@@ -16,7 +41,13 @@ const task = new Task('wtso scraper', () => {
     T.get('statuses/user_timeline', options , function(err, data) {
         let posts = [];
         for(let i = 0; i < data.length; i++){
-            let post = {text: data[i].text, created_at: data[i].created_at};
+            let post = {
+                text: data[i].text, 
+                created_at: data[i].created_at,
+                rating: '', 
+                link: '',
+                discount: ''
+            };
             if(data[i].text.includes('% off!')){
                 posts.push(post);
             }
@@ -25,6 +56,7 @@ const task = new Task('wtso scraper', () => {
         let wtso = posts.shift();
         let text = wtso.text;
         let length = text.length;
+        // console.log(text);
         /*
         Formats 
         Right now on WTSO: 93 Pt. Chablis Stéphane Brocard Closerie des Alisiers Vieilles   93 rating and 47% off! #wtso  https://t.co/h5rmbphTaZ
@@ -39,40 +71,36 @@ const task = new Task('wtso scraper', () => {
         if(text.includes("Right now on WTSO: ")){
             text = text.replace("Right now on WTSO: ","");
         }
-        //end
    
 
          //get link
-        let link = text.substr(text.indexOf("https://t.co"), length);
-        console.log(text);
-        console.log(link);
+         if(text.includes("https://t.co")){
+            let link = text.substr(text.indexOf("https://t.co"), length);
+            wtso.link = link.split(" ")[0];
+         }
 
         //get % off
-        let discountRegex = /\d{2,3}(% off)!/;
-        if(discountRegex.test(text)){
-            let index = text.search(discountRegex);
-            console.log(text.substring(index, index + 8));
-        }
+        wtso.discount = getDiscount(text);
+        
 
+        // Rating
+        wtso.rating = getRating(text);
         let ratingRegex = /\d{2,3} (rating)/;
-        if(ratingRegex.test(text)){
-            let index = text.search(ratingRegex);
-            console.log(text.substring(index, index + 2));
-        }
-
         text = text.replace(text.substr(text.search(ratingRegex), text.length), '');
-        console.log(text);
+        wtso.text = text.trim();
+      
+        //get min index of xx rating or xx% off
 
-        // fs.writeFile ("./src/wtso.json", JSON.stringify(wtso), function(err) {
-        //     if (err) throw err;
-        //     let date = new Date();
-        //      console.log(`${date.toDateString()} ${date.toLocaleTimeString()}:`);
-        //      console.log(wtso);
-        //     }
-        // );
+        fs.writeFile ("./src/wtso.json", JSON.stringify(wtso), function(err) {
+            if (err) throw err;
+            let date = new Date();
+            //  console.log(`${date.toDateString()} ${date.toLocaleTimeString()}:`);
+            //  console.log(wtso);
+            }
+        );
     })
 })
-const job = new SimpleIntervalJob({ seconds: 3, }, task)
+const job = new SimpleIntervalJob({ seconds: 5, }, task)
 
 scheduler.addSimpleIntervalJob(job)
 
