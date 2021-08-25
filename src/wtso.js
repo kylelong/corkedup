@@ -59,6 +59,7 @@ const task = new Task('wtso scraper', () => {
         // console.log(text);
         /*
         Formats 
+         White Burgundy Pouilly-Fuissé Domaine Ferraud l'Entreroches  92 rating and 69% off!
         Right now on WTSO: 93 Pt. Chablis Stéphane Brocard Closerie des Alisiers Vieilles   93 rating and 47% off! #wtso  https://t.co/h5rmbphTaZ
         94 rating and 56% off! #wtso  https://t.co/noTQ4FCCKP
         76% off! #wtso  https://t.co/tItDkc8CBu
@@ -94,8 +95,8 @@ const task = new Task('wtso scraper', () => {
         fs.writeFile ("./src/wtso.json", JSON.stringify(wtso), function(err) {
             if (err) throw err;
             let date = new Date();
-            //  console.log(`${date.toDateString()} ${date.toLocaleTimeString()}:`);
-            //  console.log(wtso);
+             console.log(`${date.toDateString()} ${date.toLocaleTimeString()}:`);
+             console.log(wtso);
             }
         );
     })

@@ -20,7 +20,7 @@ const Navigation = (props) => {
     return (
         <div className="navContainer">
             <button className="button is-info is-light is-small" id="menuButton" onClick={clickedButton}>{buttonText}</button> 
-            <Logo header={props.header} />
+            <Logo />
             <ul className="navbarMenu">
                 <Link to="/account">
                 <li>

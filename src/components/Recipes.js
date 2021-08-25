@@ -6,7 +6,7 @@ const Recipes = () => {
     let header = "RECIPES"
     return (
         <div>
-                <Navigation header={header} />
+                <Navigation />
                 <img id="chef" src={dinner}  className="pageImg"/>
             
 

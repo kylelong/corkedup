@@ -6,12 +6,57 @@
     bottom: 50px;
     width: 500px;
 }
+.savingsContainer {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
+
 @media screen and (max-width: 768px) {
     #savings{
        padding-top: 35px;
     }
 }
-img{
+#wtso{
+max-width: 500px;
+border-bottom: 5px #9fbfff solid;
+padding-bottom: 5px;
+}
+#wtso-img{
     height: 350px;
     width: 185px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.savingsTitle{
+    font-size: 20px;
+    font-weight: 700;
+}
+.purchaseBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 250px;
+    border-radius: .25rem;
+    padding: .625rem 1.25rem;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid #5A38FD;
+    color: #9fbfff;
+    background-color: white;
+    cursor: pointer;
+
+    
+}
+.purchaseBtn:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #9fbfff;
 }

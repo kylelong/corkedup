@@ -7,7 +7,7 @@ class Events extends Component {
         let header = "EVENTS";
         return (
             <div>
-                <Navigation header={header} />
+                <Navigation/>
                 <img id="party" src={party}  className="pageImg"/>
             </div>
         );

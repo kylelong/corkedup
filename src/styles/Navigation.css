@@ -4,7 +4,7 @@
     flex-direction: column;
 }
 .navbarMenu{
-  position:absolute;
+  position:fixed;
   top: 45px;
   right: 100px;
   z-index: 1000;
@@ -29,7 +29,7 @@ a{
     font-weight: bold;
 }
 .desktopMenu{
- position: absolute;
+ position: fixed;
  top: 12%;
  left: 50px;
 }
