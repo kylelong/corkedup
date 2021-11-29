@@ -101,7 +101,7 @@ const task = new Task('wtso scraper', () => {
         );
     })
 })
-const job = new SimpleIntervalJob({ seconds: 5, }, task)
+const job = new SimpleIntervalJob({ minutes: 30, }, task)
 
 scheduler.addSimpleIntervalJob(job)
 

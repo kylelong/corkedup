@@ -53,10 +53,10 @@ class WTSO extends Component {
                 <div id="wtso">
                         <p className="savingsTitle">{this.state.title}</p>
                         <img src={this.state.src} id="wtso-img" />
-                        <p>Rating {this.state.rating}</p>
-                        <p>Discount {this.state.discount}</p>
-                        <p>Price {this.state.price}</p>
-                        <p>Quote {this.state.quote}</p>
+                        <p>Rating: {this.state.rating}</p>
+                        <p>Discount: {this.state.discount}</p>
+                        <p>Price: {this.state.price}</p>
+                        <p>Quote: {this.state.quote}</p>
                         <a href={this.state.link} target="_blank"><button className="purchaseBtn">Purchase</button></a>
                 </div>
              </a>

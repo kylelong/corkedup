@@ -5,7 +5,7 @@ import '../styles/Savings.css';
 import data from '../wtso.json';
 import axios from 'axios';
 import WTSO from './savings/Wtso';
-
+import LastBottle from './savings/LastBottle';
 
 class Savings extends Component {
 
@@ -28,7 +28,7 @@ class Savings extends Component {
                 <div className="savingsContainer">
                     <img id="savings" src={savings} className="pageImg"/>
                     <WTSO/>
-                    <WTSO/>
+                    <LastBottle/>
                 </div>
             </div>
         );
