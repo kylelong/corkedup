@@ -30,13 +30,13 @@ const Recipes = () => {
                     <p id="recipeDesc">Weekly tailored recipes to expand your palette with a delicious bottle of wine</p>
                     
                     <div id="recipeMain">
-                        <p class="recipeHeader">Chicken Paillard</p>
+                        <p className="recipeHeader">Chicken Paillard</p>
                             <p className="recipeDescription">Butterlfy chicken breast with basil tomatoes and balsimc vingear arugula</p>
                             <img src={chickenPaillard} className="recipeImage"/>
                         <p>This quick dish is simple, light yet so delicious and filling. The savory tastiness from the garlic and oily basil tomatoes and argula dances well with the juicy chicken breast. 
-                            The crisp acidicity with notes of lemon,light honey & butter, and apricot flows beautifully with the meal. </p>
-                        <p class="recipeSectionHeader">Varietal: Chardonnay</p>
-                        <p class="recipeSectionHeader">Wines:</p>
+                            The crisp acidicity from a rich glass of Chardonnay with notes of lemon,light honey & butter, and apricot flows beautifully with the meal. </p>
+                        <p className="recipeSectionHeader">Varietal: Chardonnay</p>
+                        <p className="recipeSectionHeader">Wines:</p>
                         <span>
                         <ul>
                             <a href="https://www.vivino.com/US/en/chateau-montelena-winery-chardonnay/w/1697?year=2017" target="_blank">
@@ -46,6 +46,7 @@ const Recipes = () => {
                             <li>2018 Grgich Hills Chardonnay</li>
                             </a>
                         </ul>
+
                         </span>
                     </div>
 
@@ -69,7 +70,7 @@ const Recipes = () => {
 
                                 }
                             </ol> 
-                             <a href="https://www.humnutrition.com/blog/easy-chicken-recipe/" class="source" target="_blank">Source</a>
+                             <a href="https://www.humnutrition.com/blog/easy-chicken-recipe/" className="source" target="_blank">Source</a>
 
                     </div>
                 </div>

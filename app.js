@@ -88,9 +88,10 @@ app.get("/lastbottle", function(req, res) {
 
 });
 
-app.get("/winebars", function(req, res) {
+app.get("/winebars/", function(req, res) {
 
-        let zipCode = '94109';
+        let { zipCode } = req.query;
+        console.log(zipCode);
         // Create a new yelpAPI object with your API key
         let apiKey = '5hObF9L_APDctOtFxXOSGDWt5bfvPdBHWm7JHoI191sQ73RjayKGTtc1lr_uzkzzmeqR8j1I8UIyxTwelsrI8i_meC8u8sbB_4fHBbCs0PPlcFmnwJ2SNuzRnW5cXnYx';
         let yelp = new yelpAPI(apiKey);
@@ -102,7 +103,6 @@ app.get("/winebars", function(req, res) {
         yelp.query('businesses/search', params)
         .then(data => {
         // Success
-        console.log(data);
         res.send(data);
         })
         .catch(err => {

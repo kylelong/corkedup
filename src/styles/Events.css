@@ -3,8 +3,38 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    bottom: 30px;
+    bottom: 50px;
     width: 500px;
+}
+
+.eventHeader {
+    
+    text-align: center;
+    padding-right: 10px;
+}
+.eventHeader:hover{
+    color:#5A38FD;
+    cursor: pointer;
+    font-weight: bold;
+}
+#eventHeaderSelected{
+    color:#5A38FD;
+    cursor: pointer;
+    font-weight: bold;
+}
+.eventsContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 50px;
+    width: 500px;
+    font-size: 20px;
+    color: #808080;
+
+
+
 }
 @media screen and (max-width: 768px) {
     #party{
