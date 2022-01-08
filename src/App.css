@@ -26,15 +26,15 @@
 }
 /* Corked up in Logo.js */
 #name{
-  font-size: 75px;
+  font-size: 43px;
   /* font-family: 'Dancing Script', cursive; */
   /* font-family: 'Pacifico', cursive; */
   font-family: 'Sacramento', cursive;
   /* font-family: "Helvetica Neue", Arial, sans-serif; */
   color: #9fbfff;
   z-index: 1000;
-  padding: 0; 
-  margin: 0;
+  position: fixed;
+  top: 0;
   font-weight: bold;
 }
 .nameContainer{

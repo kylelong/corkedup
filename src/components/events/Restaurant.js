@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/WineBar.css';
-const WineBar = ({name, display_name, display_address, url, price}) => {
+const Restaurant = ({name, display_name, display_address, url, price}) => {
     return (
         <a href={url} target="_blank">
             <div className="wineBarItem">
@@ -12,4 +12,4 @@ const WineBar = ({name, display_name, display_address, url, price}) => {
     );
 };
 
-export default WineBar;
+export default Restaurant;

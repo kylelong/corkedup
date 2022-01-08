@@ -33,7 +33,7 @@ const Navigation = (props) => {
                 </li>
                 </Link>
             </ul>
-            <ul className="desktopMenu">
+            {/* <ul className="desktopMenu">
                             <Link to="/events">
                                 <li>
                                     Events
@@ -51,7 +51,7 @@ const Navigation = (props) => {
                                     Recipes
                                 </li>
                             </Link>
-                </ul>
+                </ul> */}
 
             {buttonText === "X Menu" &&
                 <ul className="mobileMenu">

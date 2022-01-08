@@ -12,3 +12,7 @@
 .eventsContainer{
     width: 440px;
 }
+.price{
+    float: right;
+    color: green;
+}

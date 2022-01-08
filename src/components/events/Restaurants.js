@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import WineBar from './WineBar';
+import Restaurant from './Restaurant';
 import '../../styles/WineBars.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   }));
-const WineBars = () =>  {
+const Restaurants = () =>  {
 
     const [zipCode, setZipCode] = useState("94109")
     const [data, setData] = useState([]);
@@ -20,7 +20,7 @@ const WineBars = () =>  {
     const [zipCodeSave, setZipCodeSave] = useState(false);
     const classes = useStyles();
     useEffect(() => {
-        axios.get("/winebars", {params: { zipCode: zipCode} })
+        axios.get("/restaurants", {params: { zipCode: zipCode} })
         .then((response) => {
             setData(response.data)
         })
@@ -60,30 +60,30 @@ const WineBars = () =>  {
     
         return (
                 <div class="parent">
-                <div className="wineBarsContainer">
-                    <p>Reputable wine bars where you can enjoy a glass or two &#x1F609; </p>
-                    <br />
-                    {data.hasOwnProperty("businesses") &&
-                    
-                    Object.entries(data.businesses).map(([key, value], i) => {
-                        return (
-                            <WineBar 
-                                key={value.id}
-                                name={value.name} 
-                                display_name={value.display_phone}
-                                display_address={value.location.display_address.join("\n")}
-                                price={value.price}
-                                url={value.url}
-                            />
-                        )
-                    })
+                    <div className="wineBarsContainer">
+                        <p>Restaurants where you can enjoy a glass with a nice meal </p>
+                        <br />
+                        {data.hasOwnProperty("businesses") &&
+                        
+                        Object.entries(data.businesses).map(([key, value], i) => {
+                            return (
+                                <Restaurant
+                                    key={value.id}
+                                    name={value.name} 
+                                    display_name={value.display_phone}
+                                    display_address={value.location.display_address.join("\n")}
+                                    price={value.price}
+                                    url={value.url}
+                                />
+                            )
+                        })
 
-                    }
+                        }
+                        
                     
-                
-                </div>
+                    </div>
 
-                <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
+                <form className={classes.root} noValidate autoComplete="off" id="loginForm">
                  <label htmlFor="zipcode">Zipcode</label>
                     <TextField id="outlined-basic" label={zipCode} variant="outlined" name="zipcode" id="zipcode" placeholder={zipCode}  inputProps={{ maxLength:5 }} onChange={onChange} />
                     {(errors.zipcode.length > 0) &&
@@ -95,6 +95,7 @@ const WineBars = () =>  {
                     {zipCodeSave &&
                         <span style={{color: "green"}}>Zip Code successfully saved.</span>
                     }
+            
 
                 </form>
             </div>
@@ -103,4 +104,4 @@ const WineBars = () =>  {
     
 }
 
-export default WineBars;
+export default Restaurants;
