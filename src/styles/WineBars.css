@@ -9,14 +9,15 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 position: relative;
-top: 400px;
+top: 357px;
 left: 4%;
 
 }
 
 form{
     position: fixed;
-    top: 29%;
+    top: 297px;
+    right: 3%;
     display: flex;
     flex-direction: column;
 

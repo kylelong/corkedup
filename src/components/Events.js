@@ -21,7 +21,7 @@ const Events = () => {
                     <div className="eventsContainer">
                         <h4 className="eventHeader" id={eventType === "winebars" ? "eventHeaderSelected" : ""} onClick={() => clickedButton("winebars")}>Wine Bars</h4>
                         <h4 className="eventHeader" id={eventType === "events" ? "eventHeaderSelected" : ""} onClick={() => clickedButton("events")}>Events</h4>
-                        <h4 className="eventHeader" id={eventType === "restaurants" ? "eventHeaderSelected" : ""} onClick={() => clickedButton("restaurants")}>Restaurants</h4>
+                        <h4 className="eventHeader" id={eventType === "restaurants" ? "eventHeaderSelected" : ""} onClick={() => clickedButton("restaurants")} style={{marginRight: "30px"}}>Restaurants</h4>
                     </div>
                     <div>
                         {eventType === "winebars" && <WineBars />}
