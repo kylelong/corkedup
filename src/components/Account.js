@@ -76,7 +76,6 @@ const Account = () => {
     }
     return (
         <div>
-             <Navigation />
              <div className="accountContainer">
                  <h3 className="header">Account Information</h3>
                  <p>Email: {email}</p>
@@ -98,7 +97,7 @@ const Account = () => {
                 </form>
                 {!canceled &&
                     <div className="buttons">
-                        <button className="button is-danger is-light" id="cancel" onClick={handleCancel}>{cancel === true ? "X Cancel Subscription" : "Cancel Subscription"}</button>
+                        <button className="button is-danger is-light is-medium is-fullwidth" id="cancel" onClick={handleCancel}>{cancel === true ? "X Cancel Subscription" : "Cancel Subscription"}</button>
                     </div>
 
                 }
@@ -120,12 +119,12 @@ const Account = () => {
                      
                 }
                 {(cancel && !canceled) && 
-                        <div className="accountContainer"> 
+                        <div className="cancelContainer"> 
                             <h3><b>Are you sure?</b></h3>
                             <p>You have 14 days left in your feel trial. Stick around to enjoy it.</p>
                             <p>Otherwise, your account will be deleted in 7 days in case decide to resubscribe.</p>
                             {/* <br /> Until then you may subscribe again, losing your free trial. */}
-                            <div className="buttons">
+                            <div className="buttons" style={{paddingTop:'10px'}}>
                                 <button className="button is-info is-light" name="yes" onClick={handleOptions}>Yes</button>
                                 <button className="button is-info is-light" name="no" onClick={handleOptions}>No</button>
                             </div>

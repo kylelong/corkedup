@@ -1,29 +1,5 @@
-.main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
-/* Home navbar menu */
-.homeNavbarMenu{
-  position:absolute;
-  top: 45px;
-  left: 100px;
-  z-index: 1000;
-}
-.homeNavbarMenu li{
-  display: inline;
-  font-size: 20px;
-  font-weight: 205;
-  margin-left: 20px;
-}
-.homeNavbarMenu li:hover, .mobileMenu li:hover, .desktopMenu li:hover{
-  cursor: pointer;
-  color: #9fbfff;
-  font-weight: bold;
 
-}
 /* Corked up in Logo.js */
 #name{
   font-size: 43px;
@@ -33,14 +9,25 @@
   /* font-family: "Helvetica Neue", Arial, sans-serif; */
   color: #9fbfff;
   z-index: 1000;
-  position: fixed;
-  top: 0;
+
   font-weight: bold;
+}
+#largeName{
+  font-size: 75px;
+  /* font-family: 'Dancing Script', cursive; */
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Sacramento', cursive;
+  /* font-family: "Helvetica Neue", Arial, sans-serif; */
+  color: #9fbfff;
+  z-index: 1000;
+  padding: 0; 
+  margin: 0;
+  font-weight: bold;  
 }
 .nameContainer{
   display: flex; 
   flex-direction: row;
-  position: relative;
+  justify-content: center;
 }
 
 

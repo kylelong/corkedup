@@ -24,9 +24,9 @@ class Savings extends Component {
         let header = "SAVINGS";
         return (
             <div>
-                <Navigation/>
+                <img id="savings" src={savings} className="pageImg"/>
                 <div className="savingsContainer">
-                    <img id="savings" src={savings} className="pageImg"/>
+              
                     <WTSO/>
                     <LastBottle/>
                 </div>

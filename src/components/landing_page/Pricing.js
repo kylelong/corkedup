@@ -20,14 +20,17 @@ const Pricing = () => {
                         $9.<sup>99</sup>
                          <span id="priceMonth">/ month</span>
                     </p>
-                    <p class="pricingText">Improve your wine experience</p>
-                    <p class="pricingText">$0.33 A DAY</p>
+                    <div className="pricingTextContainer">
 
-                    <ul id="pricingList">
-                        <li>Access to all features</li>
-                        <li>Save time</li>
-                        <li>Save time</li>
-                    </ul>
+                        <p class="pricingText">Improve your wine experience</p>
+                        <p class="pricingText">$0.33 A DAY</p>
+
+                        <ul id="pricingList">
+                            <li>Access to all features</li>
+                            <li>Find new, delicious wines</li>
+                            <li>Save time on your wine journey</li>
+                        </ul>
+                    </div>
                 </div>
     
 

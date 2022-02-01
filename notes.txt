@@ -1,3 +1,60 @@
+<ul className="desktopMenu">
+                            <Link to="/events">
+                                <li>
+                                    Events
+                                </li>
+                            </Link>
+
+                            <Link to="/savings">
+                                <li>
+                                    Savings
+                                </li>
+                            </Link>
+
+                           <Link to="/recipes">
+                                <li>
+                                    Recipes
+                                </li>
+                            </Link>
+                </ul>
+
+            {buttonText === "X Menu" &&
+                <ul className="mobileMenu">
+                            <Link to="/events">
+                                <li>
+                                    Events
+                                </li>
+                            </Link>
+
+                            <Link to="/savings">
+                                <li>
+                                    Savings
+                                </li>
+                            </Link>
+
+                           <Link to="/recipes">
+                                <li>
+                                    Recipes
+                                </li>
+                            </Link>
+
+                            <br />
+
+                           <Link to="/account">
+                                <li>
+                                    Account
+                                </li>
+                            </Link>
+
+                            <Link to="/">
+                                <li>
+                                    Logout
+                                </li>
+                            </Link>
+                </ul>
+            }
+
+
 CC length info: https://stackoverflow.com/questions/72768/how-do-you-detect-credit-card-type-based-on-number#:~:text=Important%3A%20card%20numbers%20do%20vary,between%2012%20and%2019%20digits.
 https://passwordsgenerator.net/plus/
 Toggle page to show on login
@@ -194,3 +251,6 @@ phone: "+14155166945",
 display_phone: "(415) 516-6945",
 distance: 122.57724999373075
 },
+
+Stripe
+rkai-qksl-spiq-dtgj-vmdw

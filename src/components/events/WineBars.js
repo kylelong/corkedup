@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import WineBar from './WineBar';
+import EventsHeader from './EventsHeader';
 import '../../styles/WineBars.css';
+import Navigation from '../Navigation';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles((theme) => ({
@@ -60,6 +62,8 @@ const WineBars = () =>  {
     
         return (
                 <div class="parent">
+                    <Navigation />
+                    <EventsHeader />
                 <div className="wineBarsContainer">
                     <p>Reputable wine bars where you can enjoy a glass or two &#x1F609; </p>
                     <br />

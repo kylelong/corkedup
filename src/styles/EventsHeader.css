@@ -1,10 +1,9 @@
 #party{
     margin-top: 49px;
-    margin-left: 15px;
     position: fixed;
     width: 500px;
     background: white;
-    z-index:100;
+    /* z-index:100; */
 
 }
 
@@ -23,6 +22,11 @@
     cursor: pointer;
     font-weight: bold;
 }
+.eventsHeaderContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .eventContainer{
     display: flex;
     flex-direction: column;
@@ -33,14 +37,11 @@
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    position: fixed;
-    top: 322px;
-    margin-left: 5%;
-    width: 486px;
+
     font-size: 20px;
     color: #808080;
     background-color: white;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 @media screen and (max-width: 768px) {
     #party{

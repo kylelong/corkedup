@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from './Navigation';
 import dinner from '../assets/dinner.png';
 import chickenPaillard from "../assets/chicken_paillard.jpg"
 import '../styles/Recipes.css';
@@ -24,7 +23,6 @@ const Recipes = () => {
     ]
     return (
         <>
-                <Navigation />
                 <img id="chef" src={dinner}  className="pageImg"/>
                 <div id="recipeContainer">
                     <p id="recipeDesc">Weekly tailored recipes to expand your palette with a delicious bottle of wine</p>

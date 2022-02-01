@@ -2,8 +2,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    bottom: 55px;
+
     width: 480px;
     height: 350px;
 }
@@ -20,7 +19,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    margin-top: -50px;
 }
 #recipeMain{
     display: flex;
@@ -36,8 +34,7 @@
     color: #808080;
     font-weight: bold;
     width: 300px;
-    position: relative;
-    left: 18px;
+  
 }
 .recipeImage{
     width: 567px;
@@ -89,8 +86,7 @@
 }
 @media screen and (max-width: 768px){
     #chef{
-        position: relative;
-        bottom: 30px;
+
     }
     .recipeInstructions{
         padding-left: 50px;

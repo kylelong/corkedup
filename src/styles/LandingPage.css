@@ -1,14 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+/* Home navbar menu */
+.homeNavbarMenu{
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeNavbarMenu li{
+  display: inline;
+  font-size: 20px;
+  font-weight: 205;
+  margin-left: 20px;
+}
+.homeNavbarMenu a{
+  color:black;
+}
+.homeNavbarMenu li:hover, .mobileMenu li:hover, .desktopMenu li:hover{
+  cursor: pointer;
+  color: #9fbfff;
+  font-weight: bold;
 
-.container{
+}
+.mainContainer{
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  padding-top: 20px;
+}
+.photoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+}
+.loginContainer{
     display: flex;
     justify-content: center;
     align-items: center; 
     flex-direction: column;
-    position: relative;
-    top: 110px;
-    /* margin-top: -290px; */
   }
   #slogan{
     font-weight: bold;
@@ -16,25 +47,25 @@
     text-align: center;
   }
   /* Login Form */
-#loginForm, #signupForm{
+#loginForm{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start; 
-    margin: 50px;
+    margin: 30px;
     z-index: 1000;
   
   }
   #wineParty{
-    height: auto;
-    max-width: 100%;
+    /* height: 100%;
+    max-width: 100%; */
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end; 
-    position: relative;
-    top:13px;
-    left: 100px;
     background: transparent;
+    position: relative;
+    bottom: 10%;
+    
   }
 
   /* Image List */
@@ -42,7 +73,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; 
     padding-top: 100px;
     z-index: 1000;
     position: relative;
@@ -67,8 +97,9 @@
     margin-right: auto 
   }
   .imageListItemTitle{
-    color: #808080;
+    color: #f3f3f3;
     font-size: 20px;
+    font-weight: bolder;
     text-align: center;
   }
   .imageListItemText{
@@ -83,12 +114,13 @@
   .row1{
     display: flex;
     flex-direction: row;
+    width: 100%;
   
   }
   #features, #faq {
     padding-top: 35px;
     width: 100vw;
-    margin-top: 100px;
+    margin-top: 30px;
     background-color: #9fbfff;
     min-height: 475px;
     color: #ffffff;
@@ -106,14 +138,22 @@
   }
 
 /* Responsive design */
-@media screen and (max-width: 1300px) {
-    .container, .row1{
+@media screen and (max-width: 630px) {
+  .row1{
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: center;
+    position: relative;
+  }
+    .loginContainer{
       margin: 0;
       display: flex;
       flex-direction: column;
       align-self: center;
       position: relative;
       top: 0;
+      
     }
     #wineParty{
       display: block;
@@ -122,9 +162,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center; 
-      position: relative;
-      left: 0;
-      top:-70px;
+  
   
     }
     .main{
@@ -154,3 +192,14 @@
     }
   
    }
+@media (min-width: 630px){
+  .row1{
+    width: 100%;
+  }
+  .photoContainer {
+    width: 50%;
+  }
+  .loginContainer{
+    width: 50%;
+}
+}

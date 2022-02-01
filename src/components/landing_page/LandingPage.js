@@ -1,6 +1,6 @@
-import wineParty from '../../assets/wine_party.png';
-import Logo from '../Logo';
-import { Link } from 'react-router-dom';
+import wineParty from '../../assets/wine_date.svg';
+import LargeLogo from '../LargeLogo';
+import { HashLink as Link } from 'react-router-hash-link';
 import '../../styles/LandingPage.css';
 
 import LoginForm from './LoginForm';
@@ -12,7 +12,7 @@ import Questions from "./Questions";
 function LandingPage() {
 
   return (
-    <div className="main">
+    <div className="mainContainer">
           <ul className="homeNavbarMenu">
             <Link to="#features">
               <li>
@@ -32,19 +32,23 @@ function LandingPage() {
           </ul>
 
       <div className="row1">
-        <div className="container">
-              <Logo />
+        <div className="loginContainer">
+              <LargeLogo />
               <p id="slogan">The best wine experience wherever you are.</p>
               <LoginForm />
-            </div>
-              <img id="wineParty" src={wineParty}/>
+        </div>
+        <div className="photoContainer">
+          <img id="wineParty" src={wineParty}/>
         </div>
 
+        </div>
+
+      
         <Features />
 
         <Pricing />
 
-        <Questions />
+        <Questions /> 
 
       
 

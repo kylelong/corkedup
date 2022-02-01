@@ -29,7 +29,10 @@
     bottom: 10px;
 
 }
-@media screen and (max-width: 1300px) {
+.paymentContainer {
+  margin-top: 20px;
+}
+@media screen and (max-width: 320px) {
     .container2{
       margin: 0;
       display: flex;

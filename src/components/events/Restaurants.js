@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Restaurant from './Restaurant';
+import EventsHeader from './EventsHeader';
+import Navigation from '../Navigation';
 import '../../styles/WineBars.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -60,6 +62,8 @@ const Restaurants = () =>  {
     
         return (
                 <div class="parent">
+                             <Navigation />
+                     <EventsHeader />
                     <div className="wineBarsContainer">
                         <p>Restaurants where you can enjoy a glass with a nice meal </p>
                         <br />
@@ -83,7 +87,7 @@ const Restaurants = () =>  {
                     
                     </div>
 
-                <form className={classes.root} noValidate autoComplete="off" id="loginForm">
+                <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
                  <label htmlFor="zipcode">Zipcode</label>
                     <TextField id="outlined-basic" label={zipCode} variant="outlined" name="zipcode" id="zipcode" placeholder={zipCode}  inputProps={{ maxLength:5 }} onChange={onChange} />
                     {(errors.zipcode.length > 0) &&

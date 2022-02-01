@@ -21,7 +21,7 @@ const Navigation = (props) => {
         <div className="navContainer">
             <button className="button is-info is-light is-small" id="menuButton" onClick={clickedButton}>{buttonText}</button> 
             <Logo />
-            <ul className="navbarMenu">
+            {/* <ul className="navbarMenu">
                 <Link to="/account">
                 <li>
                    Account
@@ -32,63 +32,8 @@ const Navigation = (props) => {
                     Logout
                 </li>
                 </Link>
-            </ul>
-            <ul className="desktopMenu">
-                            <Link to="/events">
-                                <li>
-                                    Events
-                                </li>
-                            </Link>
-
-                            <Link to="/savings">
-                                <li>
-                                    Savings
-                                </li>
-                            </Link>
-
-                           <Link to="/recipes">
-                                <li>
-                                    Recipes
-                                </li>
-                            </Link>
-                </ul>
-
-            {buttonText === "X Menu" &&
-                <ul className="mobileMenu">
-                            <Link to="/events">
-                                <li>
-                                    Events
-                                </li>
-                            </Link>
-
-                            <Link to="/savings">
-                                <li>
-                                    Savings
-                                </li>
-                            </Link>
-
-                           <Link to="/recipes">
-                                <li>
-                                    Recipes
-                                </li>
-                            </Link>
-
-                            <br />
-
-                           <Link to="/account">
-                                <li>
-                                    Account
-                                </li>
-                            </Link>
-
-                            <Link to="/">
-                                <li>
-                                    Logout
-                                </li>
-                            </Link>
-                </ul>
-            }
-
+            </ul> */}
+            
         </div>
     );
 };

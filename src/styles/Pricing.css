@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: row;
 }
+.pricingTextContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .pricing {
     color: #9fbfff;
     font-size: 75px;
@@ -21,7 +27,7 @@
 }
 
 .pricingSlogan{
-    color: #E86166;
+    color: #dadedf;
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Archivo Black', sans-serif;
     font-size: 50px;
@@ -79,20 +85,19 @@
   .pricingText{
       color: white;
       text-align: center;
-      width: 250px;
-      margin-left: 80px;
+      font-size: 20px;
   }
 
   #pricingList {
       color: white;
       text-align: center;
+      list-style-type: disc;
+      margin-left: 41px;
+      font-size: 20px;
   }
   #pricingList li {
-    list-style-image: url("../assets/check.svg");
     color: white;
-    text-align: center;
-    margin-left: 200px;
-    margin-right: 100px;
+    text-align: left;
 
   }
 
@@ -116,11 +121,16 @@
     #pricingImage{
         display: none;
     }
-    .pricingSlogan{
-        margin-left: 120px;
-    }
-  }
 
+  }
+@media screen and (max-width: 630px){
+  .pricingSlogan{
+    font-size: 22px;
+    width: 80%;
+    text-align: center;
+    margin: unset;
+}
+}
 
 
 

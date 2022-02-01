@@ -36,7 +36,7 @@ const clickedButton = (e) => {
     <form className={classes.root} noValidate autoComplete="off" id="loginForm">
       <TextField id="outlined-basic" label="Email" variant="outlined" name="email" onChange={onChange} />
       <TextField id="outlined-basic" label="Password" variant="outlined" type="password" name="password" onChange={onChange} />
-      <Link to="/home">
+      <Link to="/bars">
         <div className="buttons">
           <button className="button is-info is-light is-medium is-fullwidth" onClick={clickedButton}>Login</button>
         </div>

@@ -176,8 +176,11 @@ function Payment(props) {
         <div className="main2">
             <div className="container2">
                 <Logo />
-                <h3 id="instruction"><b>Almost there! Enter your payment information to start enjoying Corked Up. Enjoy your 14 day trial now!</b></h3>
-                <p id="cost">After your 14 day trial, Corked Up is $10 per month.</p>
+                <div className="paymentContainer">
+                    <h3 id="instruction"><b>Almost there! Enter your payment information to start enjoying Corked Up. Enjoy your 14 day trial now!</b></h3>
+                    <p id="cost">After your 14 day trial, Corked Up is $10 per month.</p>
+                </div>
+
                 <form className={classes.root} noValidate autoComplete="off" id="signupForm">
                      <TextField id="outlined-basic" label="Access Code" variant="outlined" name="accessCode" onChange={onChange} />
                      { (errors.accessCode.length > 0) &&
@@ -207,7 +210,7 @@ function Payment(props) {
                     }
                  
                  { ((accessCode.length > 0 && validCode(accessCode)) || validPayment() )  ?
-                            <Link to="/home">
+                            <Link to="/bars">
                                 <div className="buttons">
                                     <button className="button is-info is-light is-medium is-fullwidth" onClick={clickedButton}>Submit</button> 
                                 </div>

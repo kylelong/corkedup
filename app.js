@@ -135,5 +135,28 @@ app.get("/restaurants/", function(req, res) {
     });
 
 });
+app.get("/events/", function(req, res) {
+
+    let { zipCode } = req.query;
+    console.log(zipCode);
+    // Create a new yelpAPI object with your API key
+    let apiKey = '5hObF9L_APDctOtFxXOSGDWt5bfvPdBHWm7JHoI191sQ73RjayKGTtc1lr_uzkzzmeqR8j1I8UIyxTwelsrI8i_meC8u8sbB_4fHBbCs0PPlcFmnwJ2SNuzRnW5cXnYx';
+    let yelp = new yelpAPI(apiKey);
+
+    // Set any parameters, if applicable (see API documentation for allowed params)
+    let params = [{ location: zipCode }];
+
+    // Call the endpoint
+    yelp.query('events', params)
+    .then(data => {
+    // Success
+    res.send(data);
+    })
+    .catch(err => {
+    // Failure
+    console.log(err);
+    });
+
+});
 
 app.listen(port, () => console.log(`CORS-enabled web server listening on port ${port}!`));
