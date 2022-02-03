@@ -21,7 +21,7 @@ const Navigation = (props) => {
         <div className="navContainer">
             <button className="button is-info is-light is-small" id="menuButton" onClick={clickedButton}>{buttonText}</button> 
             <Logo />
-            {/* <ul className="navbarMenu">
+            <ul className="navbarMenu">
                 <Link to="/account">
                 <li>
                    Account
@@ -32,7 +32,7 @@ const Navigation = (props) => {
                     Logout
                 </li>
                 </Link>
-            </ul> */}
+            </ul>
             
         </div>
     );

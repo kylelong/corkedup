@@ -6,6 +6,7 @@ import '../../styles/WineBars.css';
 import Navigation from '../Navigation';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import SideMenu from '../SideMenu';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -20,6 +21,7 @@ const WineBars = () =>  {
     const [data, setData] = useState([]);
     const [errors, setErrors] = useState({zipcode: ""});
     const [zipCodeSave, setZipCodeSave] = useState(false);
+
     const classes = useStyles();
     useEffect(() => {
         axios.get("/winebars", {params: { zipCode: zipCode} })
@@ -61,33 +63,13 @@ const WineBars = () =>  {
 
     
         return (
-                <div class="parent">
+                <div className="parent">
                     <Navigation />
-                    <EventsHeader />
+                    <SideMenu />
+                    <EventsHeader headline={"Reputable wine bars where you can enjoy a glass or two 😏"}/>
                 <div className="wineBarsContainer">
-                    <p>Reputable wine bars where you can enjoy a glass or two &#x1F609; </p>
-                    <br />
-                    {data.hasOwnProperty("businesses") &&
-                    
-                    Object.entries(data.businesses).map(([key, value], i) => {
-                        return (
-                            <WineBar 
-                                key={value.id}
-                                name={value.name} 
-                                display_name={value.display_phone}
-                                display_address={value.location.display_address.join("\n")}
-                                price={value.price}
-                                url={value.url}
-                            />
-                        )
-                    })
-
-                    }
-                    
-                
-                </div>
-
-                <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
+                        <br />
+                        <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
                  <label htmlFor="zipcode">Zipcode</label>
                     <TextField id="outlined-basic" label={zipCode} variant="outlined" name="zipcode" id="zipcode" placeholder={zipCode}  inputProps={{ maxLength:5 }} onChange={onChange} />
                     {(errors.zipcode.length > 0) &&
@@ -101,6 +83,26 @@ const WineBars = () =>  {
                     }
 
                 </form>
+            
+                        { data.hasOwnProperty("businesses") &&
+                            
+                            Object.entries(data.businesses).map(([key, value], i) => {
+                                return (
+                                    <WineBar 
+                                        key={value.id}
+                                        name={value.name} 
+                                        display_name={value.display_phone}
+                                        display_address={value.location.display_address.join("\n")}
+                                        price={value.price}
+                                        url={value.url}
+                                    />
+                                )
+                            })
+
+                        }
+                </div>
+
+     
             </div>
            
         );

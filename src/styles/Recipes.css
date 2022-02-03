@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    padding-top: 40px;
 }
 #recipeMain{
     display: flex;
@@ -59,8 +60,6 @@
     color: #9fbfff;
     background-color: white;
     cursor: pointer;
-
-    
 }
 .recipeBtn:hover{
     cursor: pointer;
@@ -84,11 +83,24 @@
 .source:hover{
     color: #9fbfff;
 }
-@media screen and (max-width: 768px){
-    #chef{
-
+@media screen and (max-width: 767px){
+    .recipeImage{
+        width: 100%;
+        height: auto;
+        padding-bottom: 10px;
     }
-    .recipeInstructions{
-        padding-left: 50px;
+    #recipeDesc{
+        width: 72%;
+        margin-left:29px
+    }
+    #recipeMain, #recipeInstructions, .recipeList{
+        padding: 10px 10px;
+        padding-left: 20px;
     }
 }
+@media screen and (max-width: 630px){
+    #chef {
+     width: 100%;
+     height: auto;
+    }
+ }

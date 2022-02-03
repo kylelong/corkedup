@@ -49,7 +49,7 @@ class WTSO extends Component {
         return (
             <div>
             {loading ? <p>Loadng...</p> :
-            <a href={this.state.link} target="_blank">
+            <a href={this.state.link} target="_blank" className="savingsLink">
                 <div id="wtso">
                         <p className="savingsTitle">{this.state.title}</p>
                         <img src={this.state.src} id="wtso-img" />

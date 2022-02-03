@@ -44,7 +44,7 @@ class LastBottle extends Component {
         return (
             <div>
             {loading ? <p>Loadng...</p> :
-            <a href="https://www.lastbottlewines.com/" target="_blank">
+            <a href="https://www.lastbottlewines.com/" target="_blank" className="savingsLink">
                 <div id="wtso">
                         <p className="savingsTitle">{this.state.name}</p>
                         <img src={this.state.image} id="lastbottle-img" />

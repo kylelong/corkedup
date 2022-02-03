@@ -177,8 +177,8 @@ function Payment(props) {
             <div className="container2">
                 <Logo />
                 <div className="paymentContainer">
-                    <h3 id="instruction"><b>Almost there! Enter your payment information to start enjoying Corked Up. Enjoy your 14 day trial now!</b></h3>
-                    <p id="cost">After your 14 day trial, Corked Up is $10 per month.</p>
+                    <h3 id="instruction"><b>Almost there! Enter your payment information to start enjoying Corked Up.</b></h3>
+                   
                 </div>
 
                 <form className={classes.root} noValidate autoComplete="off" id="signupForm">

@@ -1,2 +1,8 @@
-jan 28
-menu for savings, events, recipes color #d
+mobile menu button
+events
+user accounts (login, signup)
+stripe
+zipcode storage 
+add phone number and twilio for account verification 
+security for form
+help email address

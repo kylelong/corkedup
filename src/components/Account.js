@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navigation from './Navigation';
 import '../styles/Account.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -8,6 +7,8 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Navigation from './Navigation';
+import SideMenu from './SideMenu';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -77,6 +78,8 @@ const Account = () => {
     return (
         <div>
              <div className="accountContainer">
+             <Navigation />
+                    <SideMenu />
                  <h3 className="header">Account Information</h3>
                  <p>Email: {email}</p>
                  <p>Member since: {joinDate}</p>
@@ -93,43 +96,8 @@ const Account = () => {
                         <span style={{color: "green"}}>Zip Code successfully saved.</span>
                     }
             
-
                 </form>
-                {!canceled &&
-                    <div className="buttons">
-                        <button className="button is-danger is-light is-medium is-fullwidth" id="cancel" onClick={handleCancel}>{cancel === true ? "X Cancel Subscription" : "Cancel Subscription"}</button>
-                    </div>
-
-                }
-
-                {canceled &&
-                <div>
-                     <span style={{color: "green"}}>Subscription successfully canceled.</span>
-                                {/* <FormControl component="fieldset">
-                                    <FormLabel component="legend">Reason for leaving...</FormLabel>
-                                    <RadioGroup aria-label="gender" name="gender1">
-                                        <FormControlLabel value="value" control={<Radio />} label="Not enough value" />
-                                        <FormControlLabel value="expensive" control={<Radio />} label="Too expensive" />
-                                        <FormControlLabel value="worth" control={<Radio />} label="Price is not worth it" />
-                                        <FormControlLabel value="other" control={<Radio />} label="Other" />
-
-                                    </RadioGroup>
-                                </FormControl> */}
-                     </div>
-                     
-                }
-                {(cancel && !canceled) && 
-                        <div className="cancelContainer"> 
-                            <h3><b>Are you sure?</b></h3>
-                            <p>You have 14 days left in your feel trial. Stick around to enjoy it.</p>
-                            <p>Otherwise, your account will be deleted in 7 days in case decide to resubscribe.</p>
-                            {/* <br /> Until then you may subscribe again, losing your free trial. */}
-                            <div className="buttons" style={{paddingTop:'10px'}}>
-                                <button className="button is-info is-light" name="yes" onClick={handleOptions}>Yes</button>
-                                <button className="button is-info is-light" name="no" onClick={handleOptions}>No</button>
-                            </div>
-                        </div>
-                    }
+               
              </div>
         </div>
     );

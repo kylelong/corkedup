@@ -9,18 +9,16 @@
     justify-content: center;
     align-items: center; 
     flex-direction: column;
-    position: relative;
-    top: 50px;
+    margin-top: 50px;
     /* margin-top: -290px; */
   }
 #instruction{
-    max-width: 450px;
     text-align: center;
+    
 }
 #cost{
     color: #808080;
-    position: relative;
-    top: 10px;
+    margin-top: 10px;
 }
 .error{
     color: #808080;
@@ -49,3 +47,16 @@
   
   
    }
+@media screen and (max-width: 767px){
+  #instruction{
+    max-width: 450px;
+    text-align: center;
+}
+  #cost {
+    margin-left: 17px;
+  }
+  .paymentContainer {
+    padding: 10px 10px;
+  }
+  
+}

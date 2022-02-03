@@ -6,6 +6,7 @@ import Navigation from '../Navigation';
 import '../../styles/WineBars.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import SideMenu from '../SideMenu';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -61,12 +62,26 @@ const Restaurants = () =>  {
 
     
         return (
-                <div class="parent">
-                             <Navigation />
-                     <EventsHeader />
+                <div className="parent">
+                    <Navigation />
+                    <SideMenu />
+                     <EventsHeader headline={"Restaurants where you can enjoy a glass with a nice meal"} />
                     <div className="wineBarsContainer">
-                        <p>Restaurants where you can enjoy a glass with a nice meal </p>
                         <br />
+                        <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
+                            <label htmlFor="zipcode">Zipcode</label>
+                                <TextField id="outlined-basic" label={zipCode} variant="outlined" name="zipcode" id="zipcode" placeholder={zipCode}  inputProps={{ maxLength:5 }} onChange={onChange} />
+                                {(errors.zipcode.length > 0) &&
+                                <p className="error">{errors.zipCode}</p>
+                                }
+                                {/* <div className="buttons">
+                                    <button className="button is-info is-light is-medium is-fullwidth" onClick={updateZipcode}>Update</button>
+                                </div> */}
+                                {zipCodeSave &&
+                                    <span style={{color: "green"}}>Zip Code successfully saved.</span>
+                                }
+            
+                        </form>
                         {data.hasOwnProperty("businesses") &&
                         
                         Object.entries(data.businesses).map(([key, value], i) => {
@@ -86,22 +101,6 @@ const Restaurants = () =>  {
                         
                     
                     </div>
-
-                <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
-                 <label htmlFor="zipcode">Zipcode</label>
-                    <TextField id="outlined-basic" label={zipCode} variant="outlined" name="zipcode" id="zipcode" placeholder={zipCode}  inputProps={{ maxLength:5 }} onChange={onChange} />
-                    {(errors.zipcode.length > 0) &&
-                       <p className="error">{errors.zipCode}</p>
-                    }
-                    {/* <div className="buttons">
-                        <button className="button is-info is-light is-medium is-fullwidth" onClick={updateZipcode}>Update</button>
-                    </div> */}
-                    {zipCodeSave &&
-                        <span style={{color: "green"}}>Zip Code successfully saved.</span>
-                    }
-            
-
-                </form>
             </div>
            
         );

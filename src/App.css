@@ -9,6 +9,7 @@
   /* font-family: "Helvetica Neue", Arial, sans-serif; */
   color: #9fbfff;
   z-index: 1000;
+  padding-top: 10px;
 
   font-weight: bold;
 }
@@ -29,11 +30,6 @@
   flex-direction: row;
   justify-content: center;
 }
-
-
-
-
-
 
 /*  header for events, savings, recipes */
 .pageHeader{

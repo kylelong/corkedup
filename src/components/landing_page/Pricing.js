@@ -8,7 +8,7 @@ const Pricing = () => {
         <div id="pricing">
             <p className="sectionHeader" class='pricing'>Pricing</p>
 
-            <div class='pricingContainer'>
+            <div className='pricingContainer'>
 
                 <img id="pricingImage" src={pricing}/>
 
@@ -22,8 +22,8 @@ const Pricing = () => {
                     </p>
                     <div className="pricingTextContainer">
 
-                        <p class="pricingText">Improve your wine experience</p>
-                        <p class="pricingText">$0.33 A DAY</p>
+                        <p className="pricingText">Improve your wine experience</p>
+                        <p className="pricingText">$0.33 A DAY</p>
 
                         <ul id="pricingList">
                             <li>Access to all features</li>

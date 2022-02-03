@@ -1,33 +1,34 @@
 .parent{
+    /* display: flex;
+    align-items: row;
+    flex-direction: row; */
+}
+.wineBarsContainer{
+    width: 442px;
     display: flex;
     align-items: row;
     flex-direction: column;
-}
-.wineBarsContainer{
-width: 442px;
-display: block;
-margin-left: auto;
-margin-right: auto;
-
-
+    margin-left: auto;
+    margin-right: auto;
+    /* position: absolute; */
+    top: 400px;
+    /* left: 35%; */
+    z-index: -1;
 }
 
 #zipCodeForm{
-    position: fixed;
-    top: 297px;
-    right: 3%;
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-@media screen and (max-width: 1172px){
+.MuiFormControl-root.MuiTextField-root{
+    width: 100%;
+}
+@media (max-width: 630px){
     .wineBarsContainer{
-
-        top: 460px;
-        left: 4%;
-    }
-    #zipCodeForm{
-        top: 343px;
-        margin: auto 0;
+        width: 100%;
+        padding: 10px 10px;
     }
 }

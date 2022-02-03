@@ -2,6 +2,8 @@ import React from 'react';
 import dinner from '../assets/dinner.png';
 import chickenPaillard from "../assets/chicken_paillard.jpg"
 import '../styles/Recipes.css';
+import SideMenu from './SideMenu';
+import Navigation from './Navigation';
 const Recipes = () => {
     let header = "RECIPES"
     let ingredients = ["4 skinless boneless chicken breasts",
@@ -23,8 +25,11 @@ const Recipes = () => {
     ]
     return (
         <>
-                <img id="chef" src={dinner}  className="pageImg"/>
+                <Navigation />
+                <SideMenu />
+
                 <div id="recipeContainer">
+                <img id="chef" src={dinner}  className="pageImg"/>
                     <p id="recipeDesc">Weekly tailored recipes to expand your palette with a delicious bottle of wine</p>
                     
                     <div id="recipeMain">
