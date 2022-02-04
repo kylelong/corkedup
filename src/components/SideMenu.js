@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Navigation.css';
 const SideMenu = () => {
     return (
-        <div>
+        <div className="sideMenuContainer">
             <ul className="desktopMenu">
                 <Link to="/bars">
                     <li> Events</li>

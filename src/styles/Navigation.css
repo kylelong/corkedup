@@ -55,17 +55,48 @@
 .desktopMenu li{
     font-size: 20px;
     font-weight: 205;
+    padding-top: 7px;
     padding-bottom: 30px;
 }
 @media screen and (max-width: 768px) {
+    .sideMenuContainer{
+
+    }
     .navContainer{
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: left;
     }
-    .navbarMenu, .desktopMenu{
-       display: none;
+    .navbarMenu{
+        z-index: 1000;
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        margin-right: unset;
+      }
+      .desktopMenu{
+        flex-direction: row;
+        position: fixed;
+        top: 50px;
+
+        display: flex;
+        align-items: stretch; /* Default */
+        justify-content: space-evenly;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        z-index: 100;
+      }
+      .desktopMenu a{
+
+      }
+      .desktopMenu li{
+        display: block;
+        flex: 0 1 auto; /* Default */
+        list-style-type: none;
+        padding-bottom: unset;
       }
       .mobileMenu{
        width:100%;

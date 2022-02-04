@@ -40,15 +40,8 @@
      width: 485px;
     height: 307.85px; 
   }
+  #name {
+    margin-left: 10px;
+    font-size: 30px;
+  }
 }
-
-@media screen and (max-width: 1300px) {
-
-  #name{
-    font-size: 45px;
- }
-
-}
- @media screen and (min-width: 768px) {
-
- }

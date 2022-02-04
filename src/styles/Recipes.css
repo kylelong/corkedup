@@ -97,6 +97,9 @@
         padding: 10px 10px;
         padding-left: 20px;
     }
+    #chef {
+        padding-top: 35px;
+    }
 }
 @media screen and (max-width: 630px){
     #chef {

@@ -17,9 +17,12 @@
  display: flex;
  align-items: center;
  flex-direction: column;
- margin-top: 20px;
- margin-left: 50px;
+ /* margin-top: 20px;
+ margin-left: 50px; */
  padding-top: 40px;
+}
+.saveItemsContainer{
+    margin-left: 45px;
 }
 
 @media screen and (max-width: 768px) {

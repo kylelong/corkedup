@@ -26,8 +26,11 @@ class Savings extends Component {
                  <div className="savingsContainer">
                     <img id="savings" src={savings} className="pageImg"/>
                     <SideMenu />
+                    <div className="saveItemsContainer">
                     <WTSO/>
                     <LastBottle/>
+                    </div>
+
                 </div>
             </>
         );
