@@ -1,59 +1,3 @@
-<ul className="desktopMenu">
-                            <Link to="/events">
-                                <li>
-                                    Events
-                                </li>
-                            </Link>
-
-                            <Link to="/savings">
-                                <li>
-                                    Savings
-                                </li>
-                            </Link>
-
-                           <Link to="/recipes">
-                                <li>
-                                    Recipes
-                                </li>
-                            </Link>
-                </ul>
-
-            {buttonText === "X Menu" &&
-                <ul className="mobileMenu">
-                            <Link to="/events">
-                                <li>
-                                    Events
-                                </li>
-                            </Link>
-
-                            <Link to="/savings">
-                                <li>
-                                    Savings
-                                </li>
-                            </Link>
-
-                           <Link to="/recipes">
-                                <li>
-                                    Recipes
-                                </li>
-                            </Link>
-
-                            <br />
-
-                           <Link to="/account">
-                                <li>
-                                    Account
-                                </li>
-                            </Link>
-
-                            <Link to="/">
-                                <li>
-                                    Logout
-                                </li>
-                            </Link>
-                </ul>
-            }
-
 
 CC length info: https://stackoverflow.com/questions/72768/how-do-you-detect-credit-card-type-based-on-number#:~:text=Important%3A%20card%20numbers%20do%20vary,between%2012%20and%2019%20digits.
 https://passwordsgenerator.net/plus/
@@ -254,3 +198,13 @@ distance: 122.57724999373075
 
 Stripe
 rkai-qksl-spiq-dtgj-vmdw
+
+Eventbrite
+token: TYQAFS2R2P7QF5WZITFP
+url example: https://www.eventbriteapi.com/v3/users/me/?token=TYQAFS2R2P7QF5WZITFP
+HTTP example
+GET /v3/users/me HTTP 1.1 
+Host: www.eventbriteapi.com 
+Authorization: Bearer TYQAFS2R2P7QF5WZITFP
+
+https://www.eventbriteapi.com/v3

@@ -1,9 +1,7 @@
 const express = require("express");
 const cors = require('cors')
-const request = require("request");
 const cheerio = require('cheerio');
 const axios = require('axios');
-const { response } = require("express");
 const app = express();
 const port = 5000;
 let yelpAPI = require('yelp-api');
@@ -30,6 +28,72 @@ app.get("/wtso", function(req, res) {
         console.log(err);
     });
 
+
+});
+
+
+app.get("/cleanUrl", function(req, res) {
+    let { url} = req.query;
+
+    axios
+    .get(url)
+    .then((response) => {
+        const $ = cheerio.load(response.data);
+        const links = $('a');
+
+        $(links).each(function(i, link){
+            let url_text = $(link).text();
+            if(url_text.includes("http://") || url_text.includes("https://")){
+               
+                let text = $(link).text();
+                let slug = $(link).attr('href');
+                let www_index = slug.indexOf("www");
+                let com_index = slug.indexOf("com");
+                let clean_url = slug.substring(www_index, com_index + 3).trim();
+     
+                if(clean_url.lastIndexOf("F") > 0){
+                    let FIndex = clean_url.lastIndexOf("F");
+                    clean_url = clean_url.substring(FIndex + 1, clean_url.length);
+                }
+
+               res.send(clean_url);
+            } 
+           
+        });
+
+    })
+    .catch((err) => {
+       console.log(err);
+    });
+
+    
+ })
+app.get("/test", function(req, res) {
+
+    // http://localhost:5000/test?zipCode=94109
+    let { zipCode } = req.query;
+        // Create a new yelpAPI object with your API key
+        let apiKey = '5hObF9L_APDctOtFxXOSGDWt5bfvPdBHWm7JHoI191sQ73RjayKGTtc1lr_uzkzzmeqR8j1I8UIyxTwelsrI8i_meC8u8sbB_4fHBbCs0PPlcFmnwJ2SNuzRnW5cXnYx';
+        let yelp = new yelpAPI(apiKey);
+
+        // Set any parameters, if applicable (see API documentation for allowed params)
+        let params = [{ term: "wine bars", location: zipCode }];
+        let urls = [];
+        // Call the endpoint
+        yelp.query('businesses/search', params)
+        .then(data => {
+        // Success
+        let result = JSON.parse(data);
+        Object.entries(result.businesses).map(([key, value], i) => {
+            urls.push(value.url);
+        })
+        res.send(urls)
+
+        })
+        .catch(err => {
+        // Failure
+            console.log(err);
+        });
 
 });
 
@@ -111,6 +175,7 @@ app.get("/winebars/", function(req, res) {
         });
 
 });
+//#endregion
 
 app.get("/restaurants/", function(req, res) {
 
