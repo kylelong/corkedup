@@ -69,7 +69,7 @@ const WineBars = () =>  {
                     <EventsHeader headline={"Reputable wine bars where you can enjoy a glass or two 😏"}/>
                 <div className="wineBarsContainer">
                         <br />
-                        <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm">
+                        <form className={classes.root} noValidate autoComplete="off" id="zipCodeForm" onSubmit={e => {e.preventDefault();}}>
                  <label htmlFor="zipcode">Zipcode</label>
                     <TextField id="outlined-basic" label={zipCode} variant="outlined" name="zipcode" id="zipcode" placeholder={zipCode}  inputProps={{ maxLength:5 }} onChange={onChange} />
                     {(errors.zipcode.length > 0) &&
