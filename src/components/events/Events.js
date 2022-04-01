@@ -6,6 +6,7 @@ import SideMenu from '../SideMenu';
 
 const Events = () => {
     // test with zipCode -> cleanUrls with urls array -> promise array with promises containing clean urls
+    // || JSON.parse(window.localStorage.getItem('bars')) !== cleanUrls)
     const [zipCode, setZipCode] = useState("94109")
     const [urlData, setUrlData] = useState([]);
     const [cleanUrls, setCleanUrls] = useState([]);
@@ -34,13 +35,20 @@ const Events = () => {
         for(const url of urlData){
             let data = cleanUrl(url);
             if(data != null){
-                urls.push(cleanUrl(url))
+                urls.push(data);
+            }
+        }
+        Promise.all(urls).then((response) => {
+            setCleanUrls(response);
+            let bars = JSON.parse(window.localStorage.getItem('bars'));
+            console.log(JSON.parse(window.localStorage.getItem('bars')), response);
+            if( bars === null || bars === undefined || bars.length == 0) {
+                console.log(response);
+                window.localStorage.setItem('bars', JSON.stringify(response));
+                console.log(window.localStorage.getItem('bars') );
             }
             
-        }
-        console.log(urls);
-        Promise.all(urls).then((response) => {
-            console.log("response: ", response)
+
         }).catch(err => {
             console.log(err);
         })
@@ -55,15 +63,20 @@ const Events = () => {
             <EventsHeader />
             <SideMenu />
             <div>
-                {/* { 
-
-                cleanUrls.map((url, i) => {
+                { 
+   
+                (JSON.parse(window.localStorage.getItem('bars')) === undefined || 
+                JSON.parse(window.localStorage.getItem('bars')) === null || 
+                JSON.parse(window.localStorage.getItem('bars')).length == 0 ) ? 
+                <p>Loading...</p> :
+                
+                JSON.parse(window.localStorage.getItem('bars')).map((url, i) => {
                     return (
                         <p key={i}>{url}</p>
                     )
-                })
+                }) 
 
-                } */}
+                }
             </div>
         </div>
     );
