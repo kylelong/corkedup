@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+config.js
+client/events.txt
+client/notes.txt
+client/todo.txt
+notes.txt
 
 # testing
 /coverage
