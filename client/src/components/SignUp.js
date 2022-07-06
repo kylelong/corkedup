@@ -3,6 +3,7 @@ import Logo from './Logo';
 import '../styles/Signup.css';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
 import { Link } from "react-router-dom";
 //TODO: check if already logged in before visiting this page
 //make sure user exists in db before redirectin to home
@@ -14,19 +15,26 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+const label = { inputProps: { 'aria-label': 'Show' } }
 
 function SignUp(props) {
     
     const classes = useStyles();
+   
     const [errors, setErrors] = useState({email: "", password: ""});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
     const onChange = (e) => {
         const { name } = e.target;
         name === "email" ? setEmail(e.target.value) : setPassword(e.target.value);
         validEmail(email);
         validPassword(password);
+    }
+
+    const clickedShowPassword = () =>{
+        setShowPassword(showPassword => !showPassword);
     }
 
     //Email validation
@@ -74,17 +82,21 @@ function SignUp(props) {
             <div className="container">
                 <Logo />
                 <h3>Welcome to Corked Up. Create your account.</h3>
+                
                 <form className={classes.root} noValidate autoComplete="off" id="signupForm">
                     <TextField id="outlined-basic" label="Email" variant="outlined" name="email" onChange={onChange} />
                     {errors.email.length > 0 &&
                        <p className="error">{errors.email}</p>
                     }
-                    <TextField id="outlined-basic" label="Password" variant="outlined" name="password" type="password" onChange={onChange} />
+                    <TextField id="outlined-basic" label="Password" variant="outlined" name="password" type={showPassword ? "text" : "password"} onChange={onChange} />
+                    <span>
+                    <Checkbox onClick={clickedShowPassword}/> Show password
+                    </span>
                     {(errors.password.length > 0) &&
                        <p className="error">{errors.password}</p>
                     }
                        { (errors.email.length === 0 && errors.password.length === 0) ?
-                            <Link to="/payment">
+                            <Link to="/bars">
                                 <div className="buttons">
                                     <button className="button is-info is-light is-medium is-fullwidth" onClick={clickedButton}>Continue</button> 
                                 </div>
