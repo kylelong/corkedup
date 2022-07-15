@@ -5,7 +5,7 @@ import '../../styles/Questions.css';
 const Questions = () => {
     return (
         <div id="faq">
-          <p className="sectionHeader" class='faq'>Questions</p>
+          <p className="sectionHeader" className='faq'>Questions</p>
 
           <div className="questionsContainer">
 

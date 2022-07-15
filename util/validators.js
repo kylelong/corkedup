@@ -9,10 +9,10 @@ module.exports.validateRegisterInput = (
         errors.firstName = 'First name must not be empty';
     }
     if(lastName.trim() === ''){
-        errors.lasttName = 'Last name must not be empty';
+        errors.lastName = 'Last name must not be empty';
     }
     if(email.trim() === ''){
-        errors.firstName = 'Email name must not be empty';
+        errors.email = 'Email name must not be empty';
     } else {
         const regEx = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/;
         if(!email.match(regEx)){
@@ -40,7 +40,7 @@ module.exports.validateLoginInput = (
 ) => {
     const errors = {};
     if(email.trim() === ''){
-        errors.firstName = 'Email name must not be empty';
+        errors.email = 'Email name must not be empty';
     }
     if(password === ''){
         errors.password = 'Password must not be empty'

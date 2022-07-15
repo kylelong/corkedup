@@ -6,7 +6,7 @@ import '../../styles/Pricing.css';
 const Pricing = () => {
     return (
         <div id="pricing">
-            <p className="sectionHeader" class='pricing'>Pricing</p>
+            <p className="sectionHeader" className='pricing'>Pricing</p>
 
             <div className='pricingContainer'>
 

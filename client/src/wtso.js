@@ -104,7 +104,7 @@ const task = new Task('wtso scraper', () => {
 let fast = false;
 let job = new SimpleIntervalJob({ minutes: 30, }, task)
 if(fast){
-    const job = new SimpleIntervalJob({ seconds: 3, }, task)
+    job = new SimpleIntervalJob({ seconds: 3, }, task)
 } 
 
 scheduler.addSimpleIntervalJob(job)
