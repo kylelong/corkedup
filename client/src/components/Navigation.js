@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import '../styles/Navigation.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/auth';
+import { useContext } from 'react';
 const Navigation = (props) => {
+    const { user, logout } = useContext(AuthContext);
     //onclick menu shows
     /*
     Events
@@ -17,25 +20,45 @@ const Navigation = (props) => {
     const clickedButton = () => {
         buttonText === "Menu" ? setButtonText("X Menu") : setButtonText("Menu");
     }
-    return (
+    const navigationMenu = user ? (
         <div className="navContainer">
-            {/* <button className="button is-info is-light is-small" id="menuButton" onClick={clickedButton}>{buttonText}</button>  */}
-            <Logo />
-            <ul className="navbarMenu">
-                <Link to="/account">
-                <li>
-                   Account
-                </li>
-                </Link>
-                <Link to="/">
-                <li>
-                    Logout
-                </li>
-                </Link>
-            </ul>
-            
-        </div>
-    );
+
+        <Logo />
+        <ul className="navbarMenu">
+            <Link to="/account">
+            <li>
+               Account
+            </li>
+            </Link>
+            <Link to="/">
+            <li onClick={logout}>
+                Logout
+            </li>
+            </Link>
+        </ul>
+        
+    </div>
+    ) : (
+        <div className="navContainer">
+
+        <Logo />
+        <ul className="navbarMenu">
+            <Link to="/account">
+            <li>
+               Account
+            </li>
+            </Link>
+            <Link to="/">
+            <li>
+                Login
+            </li>
+            </Link>
+        </ul>
+        
+    </div>
+    )
+
+   return navigationMenu;
 };
 
 export default Navigation;

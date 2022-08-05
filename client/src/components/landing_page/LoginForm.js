@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import gql from 'graphql-tag';
 import { useMutation } from "@apollo/client";
+import { AuthContext } from '../../context/auth';
 import { useForm } from '../../util/hooks';
 /*
 TODO: Login for email and password.
@@ -20,28 +21,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function LoginForm(props) {
+  const context = useContext(AuthContext);
   const classes = useStyles();
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({})
+  const history = useHistory();
 
   const {onChange, onSubmit, values } = useForm(loginUserCallback, {
     email: '',
     password: ''
 })
 
-  const [loginUser, { loading }] = useMutation(LOGIN_USER, {
-    update(_, result){
-        props.history.push('/bars');
-    },
-    onError(err){
-        if(err){
-            setErrors(err.graphQLErrors[0].extensions.errors);
-        }
-    },
-    variables: values
+
+const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+  update(_, 
+    { 
+      data: {login: userData}}) {
+
+    context.login(userData);
+    history.push('/bars');
+  },
+  onError({ graphQLErrors }){
+    if(graphQLErrors){
+      setErrors(graphQLErrors[0].extensions.errors);
+    }
+
+  },
+  variables: values
 });
 
-  function loginUserCallback(){
-    loginUser();
+function loginUserCallback() {
+  loginUser();
 }
 
   return (
@@ -72,20 +81,12 @@ export default function LoginForm(props) {
 }
 
 const LOGIN_USER = gql`
-  mutation login(
-    $email: String!
-    $password: String!
-  ) {
+  mutation login($email: String!,$password: String!) {
     login (
         email: $email,
         password: $password  
     ){
-      id 
-      email 
-      token 
-      firstName 
-      lastName 
-      createdAt
+      id email token firstName lastName zipCode createdAt
     }
   }
 `;
