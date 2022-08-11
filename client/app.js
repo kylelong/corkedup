@@ -2,11 +2,41 @@ const express = require("express");
 const cors = require('cors')
 const cheerio = require('cheerio');
 const axios = require('axios');
+var nodemailer = require('nodemailer');
 const app = express();
+app.use(bodyParser.json());
 const port = 5001;
 let yelpAPI = require('yelp-api');
 
+app.use(bodyParser.urlencoded({ extended: false }));
 
+const route = express.Router();
+app.use('/v1', route);
+
+// create reusable transporter object using the default SMTP transport
+const transporter = nodemailer.createTransport({
+    port: 465,               // true for 465, false for other ports
+    host: "smtp.gmail.com",
+       auth: {
+            user: 'youremail@gmail.com',
+            pass: 'password',
+         },
+    secure: true,
+    });
+
+    const mailData = {
+        from: 'kylelong9506@gmail.com',  // sender address
+          to: 'kylel95@vt.edu',   // list of receivers
+          subject: 'Sending Email using Node.js',
+          text: 'That was easy!'
+        };
+
+        transporter.sendMail(mailOptions, function (err, info) {
+   if(err)
+     console.log(err)
+   else
+     console.log(info);
+});
 app.use(cors())
 
 app.get("/wtso", function(req, res) {
@@ -20,7 +50,6 @@ app.get("/wtso", function(req, res) {
         let quote = $('#wine-quote').text().trim();
         let price = $("#price").text();
         let hash = {image: src, quote: quote, price: price}; 
-        console.log(hash);
         res.send(hash);
 
     })
@@ -112,7 +141,6 @@ app.get("/lastbottle", function(req, res) {
         details.replace("Next", "");
         details.replace("Technical Details", "");
         let colons = [];
-        console.log(details);
         for(let i = 0; i < details.length && i < details.indexOf("About The Producer"); i++){
            
             if(details.charAt(i) == ":"){
@@ -136,7 +164,7 @@ app.get("/lastbottle", function(req, res) {
         for(let i = 0; i < colons.length - 1; i++){
             technical_details.push(details.substring(colons[i][0], colons[i + 1][0]));
         }
-        console.log(details);
+
         // technical_details.push(details.substring(colons[colons.length-1][0], colons[colons.length-1][1] + 8));
         // let info = technical_details.join(" ");
         // console.log(info, technical_details);
@@ -155,7 +183,6 @@ app.get("/lastbottle", function(req, res) {
 app.get("/winebars/", function(req, res) {
 
         let { zipCode } = req.query;
-        console.log(zipCode);
         // Create a new yelpAPI object with your API key
         let apiKey = '5hObF9L_APDctOtFxXOSGDWt5bfvPdBHWm7JHoI191sQ73RjayKGTtc1lr_uzkzzmeqR8j1I8UIyxTwelsrI8i_meC8u8sbB_4fHBbCs0PPlcFmnwJ2SNuzRnW5cXnYx';
         let yelp = new yelpAPI(apiKey);
@@ -180,7 +207,6 @@ app.get("/winebars/", function(req, res) {
 app.get("/restaurants/", function(req, res) {
 
     let { zipCode } = req.query;
-    console.log(zipCode);
     // Create a new yelpAPI object with your API key
     let apiKey = '5hObF9L_APDctOtFxXOSGDWt5bfvPdBHWm7JHoI191sQ73RjayKGTtc1lr_uzkzzmeqR8j1I8UIyxTwelsrI8i_meC8u8sbB_4fHBbCs0PPlcFmnwJ2SNuzRnW5cXnYx';
     let yelp = new yelpAPI(apiKey);
@@ -203,7 +229,6 @@ app.get("/restaurants/", function(req, res) {
 app.get("/events/", function(req, res) {
 
     let { zipCode } = req.query;
-    console.log(zipCode);
     // Create a new yelpAPI object with your API key
     let apiKey = '5hObF9L_APDctOtFxXOSGDWt5bfvPdBHWm7JHoI191sQ73RjayKGTtc1lr_uzkzzmeqR8j1I8UIyxTwelsrI8i_meC8u8sbB_4fHBbCs0PPlcFmnwJ2SNuzRnW5cXnYx';
     let yelp = new yelpAPI(apiKey);
@@ -224,4 +249,4 @@ app.get("/events/", function(req, res) {
 
 });
 
-// app.listen(port, () => console.log(`CORS-enabled web server listening on port ${port}!`));
+ app.listen(port, () => console.log(`CORS-enabled web server listening on port ${port}!`));

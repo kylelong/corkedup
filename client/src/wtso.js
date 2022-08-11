@@ -56,7 +56,6 @@ const task = new Task('wtso scraper', () => {
         let wtso = posts.shift();
         let text = wtso.text;
         let length = text.length;
-        // console.log(text);
         /*
         Formats 
          White Burgundy Pouilly-Fuissé Domaine Ferraud l'Entreroches  92 rating and 69% off!
@@ -94,9 +93,6 @@ const task = new Task('wtso scraper', () => {
 
         fs.writeFile ("./src/wtso.json", JSON.stringify(wtso), function(err) {
             if (err) throw err;
-            let date = new Date();
-             console.log(`${date.toDateString()} ${date.toLocaleTimeString()}:`);
-             console.log(wtso);
             }
         );
     })

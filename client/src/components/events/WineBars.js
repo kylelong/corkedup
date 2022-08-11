@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import WineBar from './WineBar';
 import EventsHeader from './EventsHeader';
 import '../../styles/WineBars.css';
@@ -7,6 +7,8 @@ import Navigation from '../Navigation';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import SideMenu from '../SideMenu';
+
+import { AuthContext } from '../../context/auth';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -17,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
   }));
 const WineBars = () =>  {
 
-    const [zipCode, setZipCode] = useState("94109")
+    const { user } = useContext(AuthContext);
+    const [zipCode, setZipCode] = useState(user.zipCode);
     const [data, setData] = useState([]);
     const [errors, setErrors] = useState({zipcode: ""});
     const [zipCodeSave, setZipCodeSave] = useState(false);
@@ -50,16 +53,6 @@ const WineBars = () =>  {
             }
         }
     }
-    const updateZipcode = (e) => {
-        //update zipcode
-        e.preventDefault();
-        if(errors.zipCode.length === 0){
-            console.log(zipCode);
-            //update zipcode on backend
-            setZipCodeSave(true);
-        }
-
-    }
 
     
         return (
@@ -75,9 +68,7 @@ const WineBars = () =>  {
                     {(errors.zipcode.length > 0) &&
                        <p className="error">{errors.zipCode}</p>
                     }
-                    {/* <div className="buttons">
-                        <button className="button is-info is-light is-medium is-fullwidth" onClick={updateZipcode}>Update</button>
-                    </div> */}
+          
                     {zipCodeSave &&
                         <span style={{color: "green"}}>Zip Code successfully saved.</span>
                     }

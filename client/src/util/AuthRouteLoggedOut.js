@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 import { AuthContext } from '../context/auth';
 
-//user is logged out
+//user is logged out -> go to landing page
 function AuthRouteLoggedOut({ component: Component, ...rest }){
     const { user } = useContext(AuthContext);
 

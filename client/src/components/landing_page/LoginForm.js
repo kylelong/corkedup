@@ -40,9 +40,12 @@ const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     context.login(userData);
     history.push('/bars');
   },
-  onError({ graphQLErrors }){
+  onError({ graphQLErrors, networkError }){
     if(graphQLErrors){
       setErrors(graphQLErrors[0].extensions.errors);
+    }
+    if(networkError){
+      console.log(networkError);
     }
 
   },

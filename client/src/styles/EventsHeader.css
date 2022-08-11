@@ -46,7 +46,7 @@
     cursor: pointer;
     font-weight: bolder;
 }
-#eventHeaderSelected{
+.eventHeaderSelected{
     color:#5A38FD;
     cursor: pointer;
     font-weight: bold;

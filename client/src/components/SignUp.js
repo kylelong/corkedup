@@ -40,8 +40,7 @@ function SignUp(props) {
             context.login(userData);
             history.push('/payment');
         },
-        onError({ graphQLErrors, networkError }){
-            console.log(graphQLErrors);
+        onError({ graphQLErrors }){
             if(graphQLErrors){
                 setErrors(graphQLErrors[0].extensions.errors);
             }
@@ -63,7 +62,7 @@ function SignUp(props) {
         <div className="main">
             <div className="container">
                 <Logo />
-                <h3>Welcome to Corked Up. Create your account.</h3>
+                <h3 className='welcome'>Welcome to Corked Up. Create your account.</h3>
                 
                 <form onSubmit={onSubmit} className={classes.root} noValidate autoComplete="off" id="signupForm">
                 <TextField id="outlined-basic" label="First Name" variant="outlined" name="firstName" onChange={onChange} />
@@ -78,7 +77,7 @@ function SignUp(props) {
                 {   errors.hasOwnProperty("zipCode") &&
                        <p className="error">{errors.zipCode}</p>
                 }
-                <p>for accurate wine reccommendations</p>
+                <p className="explain">for accurate wine reccommendations</p>
                 <TextField id="outlined-basic" label="Email" variant="outlined" name="email" onChange={onChange} />
                 {   errors.hasOwnProperty("email") &&
                        <p className="error">{errors.email}</p>

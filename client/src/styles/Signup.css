@@ -21,3 +21,12 @@
       position: absolute;
       top: 50px;
   }
+  .explain{
+    width: 100% !important;
+    position: relative;
+    bottom: 14px;
+  }
+  .welcome{
+    position: relative;
+    left: 37px;
+  }

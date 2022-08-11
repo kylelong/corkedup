@@ -1,9 +1,12 @@
 const { ApolloServer } = require('apollo-server');
 const mongoose = require('mongoose');
 const express = require("express");
-const app = express();
-const routes = require("./routes")
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+
 let port = 5000;
+
+
 
 
 const typeDefs = require('./graphql/typeDefs');
@@ -18,8 +21,6 @@ const server = new ApolloServer({
 
 mongoose.connect(MONGODB, { useNewUrlParser: true })
     .then(() => {
-        const app = express();
-        app.use("/api", routes);
         console.log("MongoDB connected");
         return server.listen({ port: port})
     })

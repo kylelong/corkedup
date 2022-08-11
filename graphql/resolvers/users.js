@@ -4,7 +4,8 @@ const { UserInputError } = require('apollo-server');
 
 const {
   validateRegisterInput,
-  validateLoginInput
+  validateLoginInput,
+  validateZipCode
 } = require('../../util/validators');
 const { SECRET_KEY } = require('../../config');
 const User = require('../../models/User');
@@ -14,8 +15,10 @@ function generateToken(user) {
     {
         id: user.id,
         email: user.email,
+        zipCode: user.zipCode,
         firstName: user.firstName,
-        lastName: user.lastName
+        lastName: user.lastName,
+        createdAt: user.createdAt
     },
     SECRET_KEY,
     { expiresIn: '1h' }
@@ -24,6 +27,43 @@ function generateToken(user) {
 
 module.exports = {
   Mutation: {
+    async updateZipcode(
+      _, 
+      {
+        zipCodeInput: { email, zipCode }
+      }
+    
+      ){
+      const { errors, valid } = validateZipCode(email, zipCode);
+
+      if(!valid){
+        throw new UserInputError('Errors', { errors });
+      }
+
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new UserInputError('Account not found.', { 
+          errors: {
+          general: 'Account not found'
+        }
+       });
+      }
+
+      user.zipCode = zipCode;
+      const res = await user.save();
+
+      const token = generateToken(res);
+
+      return {
+        ...res._doc,
+        id: res._id,
+        token
+      };
+
+
+
+    },
     async login(_, { email, password }) {
       const { errors, valid } = validateLoginInput(email, password);
 
@@ -34,14 +74,14 @@ module.exports = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        errors.general = 'User not found';
-        throw new UserInputError('User not found', { errors });
+        errors.general = 'Account not found.';
+        throw new UserInputError('Account found.', { errors });
       }
 
       const match = await bcrypt.compare(password, user.password);
       if (!match) {
-        errors.general = 'Wrong crendetials';
-        throw new UserInputError('Wrong crendetials', { errors });
+        errors.general = 'Invalid crendetials.';
+        throw new UserInputError('Invalid credentials', { errors });
       }
 
       const token = generateToken(user);
@@ -55,13 +95,14 @@ module.exports = {
     async register(
       _,
       {
-        registerInput: { firstName, lastName, email, password }
+        registerInput: { firstName, lastName, zipCode, email, password }
       }
     ) {
       // Validate user data
       const { valid, errors } = validateRegisterInput(
         firstName,
         lastName,
+        zipCode,
         email,
         password
       );
@@ -83,6 +124,7 @@ module.exports = {
       const newUser = new User({
         firstName,
         lastName,
+        zipCode,
         email,
         password,
         createdAt: new Date().toISOString()
