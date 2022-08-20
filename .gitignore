@@ -9,6 +9,7 @@ client/events.txt
 client/notes.txt
 client/todo.txt
 notes.txt
+client/node_modules
 
 # testing
 /coverage
