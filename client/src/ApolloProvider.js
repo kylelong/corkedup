@@ -3,7 +3,7 @@ import App from './App';
 import { InMemoryCache, createHttpLink, ApolloClient, ApolloProvider } from '@apollo/client';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:5000'
+    uri: 'http://localhost:5000' // change in prod
 })
 
 const client = new ApolloClient({
