@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Navigation from '.././Navigation';
-import savings from '../../assets/savings.png';
 import '../../styles/Savings.css';
-import data from '../../wtso.json';
 import axios from 'axios';
-
+import Loader from '../Loader';
 
 class WTSO extends Component {
 
@@ -18,23 +15,24 @@ class WTSO extends Component {
             discount: '',
             src:'',
             price: '',
-            quote: ''
+            quote: '',
+            loading: true
         }
     }
     componentDidMount(){
-        this.setState({
-            title: data.text, 
-            created_at: data.created_at,
-            rating: data.rating,
-            link: data.link,
-            discount: data.discount
-         })
         axios.get("/.netlify/functions/api/wtso")
         .then((response) => {
             this.setState({
+                title: response.data.title, 
+                created_at: response.data.created_at,
+                rating: response.data.rating,
+                link: response.data.link,
+                discount: response.data.discount,
                 src: response.data.image,
                 price: response.data.price,
-                quote: response.data.quote
+                quote: response.data.quote,
+                loading: false
+
             });
         })
         .catch((error) => {
@@ -44,10 +42,11 @@ class WTSO extends Component {
 
     
     render() {
-        const loading = this.state.src == ''
+
         return (
             <div>
-            {loading ? <p>Loadng...</p> :
+            {
+            this.state.loading ? <Loader />:
             <a href={this.state.link} target="_blank" className="savingsLink">
                 <div id="wtso">
                         <p className="savingsTitle">{this.state.title}</p>
